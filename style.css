@@ -1,0 +1,228 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f8ff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    color: #f0f8ff;
+    top: 0;
+    z-index: 1000;
+}
+
+header h2 {
+    margin: 0;
+    color: #f0f8ff;
+    font-size: 1.3em;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #f0f8ff;
+    transition: opacity 0.3s;
+}
+
+.menu a:hover {
+    opacity: 0.7;
+}
+
+.container {
+    padding: 20px;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 40px 20px;
+}
+
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#luiz {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.apresentacao {
+    margin-bottom: 30px;
+}
+
+.apresentacao h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.apresentacao p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.btn-inicio {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.email-inicio,
+.github-inicio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.email-inicio:hover,
+.github-inicio:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.email-inicio img,
+.github-inicio img {
+    height: 24px;
+    width: 24px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+h2 img {
+    height: 30px;
+    width: 30px;
+    margin-right: 12px;
+}
+
+.habilidades {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.habilidades p {
+    border: 2px solid #333;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.habilidades p:hover {
+    background-color: #333;
+    color: #f0f8ff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.experiencias {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experiencia-1,
+.experiencia-2 {
+    padding-left: 25px;
+    border-left: 4px solid rgb(44, 136, 255);
+    position: relative;
+}
+
+.experiencia-1::before,
+.experiencia-2::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(44, 136, 255);
+    border-radius: 50%;
+}
+
+.experiencia-1 h3,
+.experiencia-2 h3 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.3em;
+}
+
+.experiencia-1 p,
+.experiencia-2 p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.sobre p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+p {
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-inicio {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .email-inicio,
+    .github-inicio {
+        width: 100%;
+        justify-content: center;
+    }
+}
