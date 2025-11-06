@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Luiz Enrique - Porifólio</title>
+    <title>Luiz Enrique - Portfólio</title>
 </head>
 
 <body>
     <header>
-        <h2>Portfólio - Luiz Enrique</h2>
+        <div class="projetos-toggle">
+            <input type="checkbox" id="toggle-projetos">
+            <label for="toggle-projetos" class="toggle-label">
+                <h2 class="label-projetos">Projetos</h2>
+                <h2 class="label-inicio">Início</h2>
+            </label>
+        </div>
         <nav class="menu">
             <a href="#inicio">Início</a>
             <span>|</span>
@@ -84,6 +90,33 @@
                 <p>Eu sou um desenvolvedor apaixonado por tecnologia e criação de websites. Tenho experiência em React, TypeScript e outras tecnologias modernas. Busco constantemente aprender novas tecnologias e aplicar as melhores práticas de desenvolvimento.</p>
             </div>
         </section>
+    </div>
+
+    <!-- Seção de Projetos (oculta por padrão) -->
+    <div class="projetos-section">
+        <div class="projetos-content">
+            <section id="projetos-inicio">
+                <h1>Meus Projetos</h1>
+                <p class="projetos-intro">Confira alguns dos meus trabalhos mais recentes</p>
+            </section>
+
+            <section id="projetos-lista">
+                <div class="projeto">
+                    <h3>Projeto 1 - E-commerce</h3>
+                    <p>Descrição do projeto de e-commerce desenvolvido com React e TypeScript.</p>
+                </div>
+
+                <div class="projeto">
+                    <h3>Projeto 2 - Dashboard</h3>
+                    <p>Dashboard interativo com gráficos e análise de dados.</p>
+                </div>
+
+                <div class="projeto">
+                    <h3>Projeto 3 - Blog</h3>
+                    <p>Blog pessoal desenvolvido com HTML, CSS e JavaScript.</p>
+                </div>
+            </section>
+        </div>
     </div>
 </body>
 </html>
