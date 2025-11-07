@@ -1,27 +1,44 @@
+/* ------------------------------
+   RESET E CONFIGURAÇÕES GERAIS
+------------------------------ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --cor-bg: #f0f8ff;
+    --cor-texto: #333;
+    --cor-texto-secundario: #555;
+    --cor-principal: rgb(44, 136, 255);
+    --cor-header: #333;
+    --cor-clara: #f0f8ff;
+    --radius: 10px;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    background-color: #f0f8ff;
+    background-color: var(--cor-bg);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #333;
+    color: var(--cor-texto);
+    transition: background-color 0.3s ease;
 }
 
 body:has(#toggle-projetos:checked) {
     overflow: hidden;
-    /* Remove scroll do body quando projetos está ativo */
 }
 
+/* ------------------------------
+   HEADER E MENU
+------------------------------ */
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 15px;
-    background-color: #333;
-    color: #f0f8ff;
+    background-color: var(--cor-header);
+    color: var(--cor-clara);
     position: fixed;
     top: 0;
     left: 0;
@@ -29,45 +46,6 @@ header {
     z-index: 1000;
     flex-wrap: wrap;
     gap: 15px;
-}
-
-.projetos-toggle {
-    display: flex;
-    align-items: center;
-}
-
-.projetos-toggle input[type="checkbox"] {
-    display: none;
-}
-
-.projetos-toggle label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: opacity 0.3s;
-}
-
-.projetos-toggle label:hover {
-    opacity: 0.7;
-}
-
-.projetos-toggle label h2 {
-    margin: 0;
-    color: #f0f8ff;
-    font-size: 1.3em;
-    user-select: none;
-}
-
-.label-inicio {
-    display: none;
-}
-
-#toggle-projetos:checked~.toggle-label .label-projetos {
-    display: none;
-}
-
-#toggle-projetos:checked~.toggle-label .label-inicio {
-    display: block;
 }
 
 .menu {
@@ -79,7 +57,7 @@ header {
 
 .menu a {
     text-decoration: none;
-    color: #f0f8ff;
+    color: var(--cor-clara);
     transition: opacity 0.3s;
 }
 
@@ -87,11 +65,49 @@ header {
     opacity: 0.7;
 }
 
+/* ------------------------------
+   TOGGLE PROJETOS
+------------------------------ */
+.projetos-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.projetos-toggle label {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.projetos-toggle label:hover {
+    opacity: 0.7;
+}
+
+.projetos-toggle h2 {
+    margin: 0;
+    color: var(--cor-clara);
+    font-size: 1.3em;
+    user-select: none;
+}
+
+.label-inicio {
+    display: none;
+}
+
+/* alterna o texto do label */
+#toggle-projetos:checked~.toggle-label .label-projetos {
+    display: none;
+}
+
+#toggle-projetos:checked~.toggle-label .label-inicio {
+    display: block;
+}
+
+/* ------------------------------
+   CONTEÚDO PRINCIPAL
+------------------------------ */
 .container {
-    margin-top: 60px;
+    margin-top: 70px;
     padding: 20px;
     transition: opacity 0.5s ease, transform 0.6s ease;
-    transform-style: preserve-3d;
 }
 
 body:has(#toggle-projetos:checked) .container {
@@ -99,9 +115,7 @@ body:has(#toggle-projetos:checked) .container {
     visibility: hidden;
     transform: rotateY(180deg);
     pointer-events: none;
-    /* Impede interação com o container */
     position: absolute;
-    /* Remove do fluxo normal */
 }
 
 body:has(#toggle-projetos:checked) .menu {
@@ -114,12 +128,14 @@ section {
     padding: 40px 20px;
 }
 
+/* ------------------------------
+   SEÇÃO INÍCIO
+------------------------------ */
 #inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
 }
 
 #luiz {
@@ -127,17 +143,12 @@ section {
     width: 200px;
     height: 200px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.apresentacao {
-    margin-bottom: 30px;
+    box-shadow: var(--sombra);
 }
 
 .apresentacao h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .apresentacao p {
@@ -145,6 +156,7 @@ section {
     line-height: 1.6;
     max-width: 600px;
     margin: 10px auto;
+    color: var(--cor-texto-secundario);
 }
 
 .btn-inicio {
@@ -152,6 +164,7 @@ section {
     gap: 40px;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .email-inicio,
@@ -160,16 +173,16 @@ section {
     align-items: center;
     gap: 10px;
     padding: 12px 20px;
-    background-color: white;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .email-inicio:hover,
 .github-inicio:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 .email-inicio img,
@@ -178,12 +191,14 @@ section {
     width: 24px;
 }
 
+/* ------------------------------
+   TÍTULOS E HABILIDADES
+------------------------------ */
 h2 {
     display: flex;
     align-items: center;
     font-size: 2em;
     margin-bottom: 30px;
-    color: #333;
 }
 
 h2 img {
@@ -199,86 +214,84 @@ h2 img {
 }
 
 .habilidades p {
-    border: 2px solid #333;
+    border: 2px solid var(--cor-texto);
     padding: 15px 30px;
-    border-radius: 10px;
+    border-radius: var(--radius);
     font-weight: bold;
     transition: all 0.3s;
     cursor: pointer;
 }
 
 .habilidades p:hover {
-    background-color: #333;
-    color: #f0f8ff;
+    background-color: var(--cor-texto);
+    color: var(--cor-clara);
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* ------------------------------
+   EXPERIÊNCIAS
+------------------------------ */
 .experiencias {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.experiencia-1,
-.experiencia-2 {
+.experiencia {
     padding-left: 25px;
-    border-left: 4px solid rgb(44, 136, 255);
+    border-left: 4px solid var(--cor-principal);
     position: relative;
 }
 
-.experiencia-1::before,
-.experiencia-2::before {
+.experiencia::before {
     content: '';
     position: absolute;
     left: -8px;
     top: 0;
     width: 12px;
     height: 12px;
-    background-color: rgb(44, 136, 255);
+    background-color: var(--cor-principal);
     border-radius: 50%;
 }
 
-.experiencia-1 h3,
-.experiencia-2 h3 {
-    color: #333;
+.experiencia h3 {
     margin-bottom: 8px;
     font-size: 1.3em;
 }
 
-.experiencia-1 p,
-.experiencia-2 p {
+.experiencia p {
     margin: 5px 0;
     line-height: 1.6;
+    color: var(--cor-texto-secundario);
 }
 
+/* ------------------------------
+   SOBRE
+------------------------------ */
 .sobre p {
     font-size: 1.1em;
     line-height: 1.8;
     max-width: 800px;
+    color: var(--cor-texto-secundario);
 }
 
-p {
-    color: #555;
-}
-
-/* Seção de Projetos */
+/* ------------------------------
+   PROJETOS SECTION
+------------------------------ */
 .projetos-section {
     position: fixed;
     top: 60px;
     left: 0;
     width: 100%;
     height: calc(100vh - 60px);
-    /* Define altura fixa */
-    background-color: #f0f8ff;
+    background-color: var(--cor-bg);
     z-index: 998;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.6s ease;
-    transform-style: preserve-3d;
     transform: rotateY(-180deg);
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.6s ease;
     overflow-y: auto;
-    /* Permite scroll dentro da seção */
 }
 
 body:has(#toggle-projetos:checked) .projetos-section {
@@ -290,21 +303,7 @@ body:has(#toggle-projetos:checked) .projetos-section {
 .projetos-content {
     padding: 20px;
     min-height: 100%;
-    /* Garante que o conteúdo ocupe toda altura */
-}
-
-#projetos-inicio {
     text-align: center;
-}
-
-#projetos-inicio h1 {
-    font-size: 2.5em;
-    color: #333;
-}
-
-.projetos-intro {
-    font-size: 1.2em;
-    color: #555;
 }
 
 #projetos-lista {
@@ -314,13 +313,17 @@ body:has(#toggle-projetos:checked) .projetos-section {
     gap: 40px;
 }
 
+/* ------------------------------
+   CARTÕES DE PROJETOS
+------------------------------ */
 .projeto {
-    background-color: white;
-    justify-items: center;
+    background-color: #fff;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--sombra);
     transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    max-width: 300px;
 }
 
 .projeto:hover {
@@ -329,89 +332,72 @@ body:has(#toggle-projetos:checked) .projetos-section {
 }
 
 .projeto h3 {
-    color: #333;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.projeto p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
-}
-
-#destaque {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.destaque-content h2 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.destaque-btn a {
-    background-color: #333;
-    color: #f0f8ff;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s;
-    display: inline-block;
-}
-
-.destaque-btn a:hover {
-    background-color: rgb(44, 136, 255);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-#projetos-desenvolvimento {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-#projetos-desenvolvimento h2 {
-    color: #333;
+    font-size: 1.6em;
     margin-bottom: 15px;
 }
 
+.projeto p {
+    font-size: 1em;
+    color: var(--cor-texto-secundario);
+}
+
+/* ------------------------------
+   DESTAQUE E LINGUAGENS
+------------------------------ */
+#destaque,
+#projetos-desenvolvimento {
+    background-color: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.destaque-btn a,
 #projetos-desenvolvimento a {
-    background-color: #333;
-    color: #f0f8ff;
-    padding: 12px 24px;
+    color: var(--cor-principal);
     text-decoration: none;
-    border-radius: 8px;
     transition: all 0.3s;
-    display: inline-block;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-#projetos-desenvolvimento a:hover {
-    background-color: rgb(44, 136, 255);
-    transform: translateY(-2px);
+#linguagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#linguagens span {
+    border: 1px solid var(--cor-texto);
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 0.9em;
+    background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    margin-top: 10px;
 }
 
+#linguagens span:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* ------------------------------
+   RESPONSIVIDADE
+------------------------------ */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
+        text-align: center;
     }
 
     .btn-inicio {
@@ -425,16 +411,7 @@ body:has(#toggle-projetos:checked) .projetos-section {
         justify-content: center;
     }
 
-    #projetos-inicio h1 {
-        font-size: 2em;
-    }
-
-    .projeto h3 {
-        font-size: 1.5em;
-    }
-
     #destaque {
-        flex-direction: column;
         text-align: center;
     }
 }
