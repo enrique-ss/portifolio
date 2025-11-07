@@ -10,6 +10,11 @@ body {
     color: #333;
 }
 
+body:has(#toggle-projetos:checked) {
+    overflow: hidden;
+    /* Remove scroll do body quando projetos está ativo */
+}
+
 header {
     display: flex;
     justify-content: space-around;
@@ -57,11 +62,11 @@ header {
     display: none;
 }
 
-#toggle-projetos:checked ~ .toggle-label .label-projetos {
+#toggle-projetos:checked~.toggle-label .label-projetos {
     display: none;
 }
 
-#toggle-projetos:checked ~ .toggle-label .label-inicio {
+#toggle-projetos:checked~.toggle-label .label-inicio {
     display: block;
 }
 
@@ -93,6 +98,10 @@ body:has(#toggle-projetos:checked) .container {
     opacity: 0;
     visibility: hidden;
     transform: rotateY(180deg);
+    pointer-events: none;
+    /* Impede interação com o container */
+    position: absolute;
+    /* Remove do fluxo normal */
 }
 
 body:has(#toggle-projetos:checked) .menu {
@@ -118,7 +127,7 @@ section {
     width: 200px;
     height: 200px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .apresentacao {
@@ -153,14 +162,14 @@ section {
     padding: 12px 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
 .email-inicio:hover,
 .github-inicio:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .email-inicio img,
@@ -202,7 +211,7 @@ h2 img {
     background-color: #333;
     color: #f0f8ff;
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .experiencias {
@@ -259,6 +268,8 @@ p {
     top: 60px;
     left: 0;
     width: 100%;
+    height: calc(100vh - 60px);
+    /* Define altura fixa */
     background-color: #f0f8ff;
     z-index: 998;
     opacity: 0;
@@ -267,12 +278,19 @@ p {
     transform-style: preserve-3d;
     transform: rotateY(-180deg);
     overflow-y: auto;
+    /* Permite scroll dentro da seção */
 }
 
 body:has(#toggle-projetos:checked) .projetos-section {
     opacity: 1;
     visibility: visible;
     transform: rotateY(0deg);
+}
+
+.projetos-content {
+    padding: 20px;
+    min-height: 100%;
+    /* Garante que o conteúdo ocupe toda altura */
 }
 
 #projetos-inicio {
@@ -301,13 +319,13 @@ body:has(#toggle-projetos:checked) .projetos-section {
     justify-items: center;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .projeto:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .projeto h3 {
@@ -320,6 +338,68 @@ body:has(#toggle-projetos:checked) .projetos-section {
     font-size: 1.1em;
     line-height: 1.6;
     color: #555;
+}
+
+#destaque {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.destaque-content h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.destaque-btn a {
+    background-color: #333;
+    color: #f0f8ff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.destaque-btn a:hover {
+    background-color: rgb(44, 136, 255);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#projetos-desenvolvimento {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#projetos-desenvolvimento h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#projetos-desenvolvimento a {
+    background-color: #333;
+    color: #f0f8ff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+#projetos-desenvolvimento a:hover {
+    background-color: rgb(44, 136, 255);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -351,5 +431,10 @@ body:has(#toggle-projetos:checked) .projetos-section {
 
     .projeto h3 {
         font-size: 1.5em;
+    }
+
+    #destaque {
+        flex-direction: column;
+        text-align: center;
     }
 }
