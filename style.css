@@ -1,514 +1,546 @@
-/* Reset básico */
+/* Importando fonte moderna 'Inter' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Variáveis de Cores (Design System) */
+:root {
+    --primary: #2563eb;       /* Azul moderno */
+    --primary-dark: #1d4ed8;
+    --bg-body: #f8fafc;       /* Fundo muito suave */
+    --bg-card: #ffffff;
+    --text-main: #1e293b;     /* Cinza escuro (não preto puro) */
+    --text-muted: #64748b;    /* Cinza médio */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --radius: 1rem;
+    --header-height: 80px;
+}
+
+/* Reset básico moderno */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #d6e8f8;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #333;
-    transition: background-color 0.3s ease;
+    background-color: var(--bg-body);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll lateral nas animações */
 }
 
-body:has(#toggle-projetos:checked) {
-    overflow: hidden;
-}
-
-/* Header fixo */
+/* -------------------------------------------
+   HEADER & NAVEGAÇÃO
+------------------------------------------- */
 header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 16px;
-    background-color: #333;
-    color: #f0f8ff;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: rgba(255, 255, 255, 0.85); /* Vidro */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     z-index: 1000;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-/* Menu de navegação */
-.menu {
     display: flex;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 2rem;
+    transition: all 0.3s ease;
 }
 
-.menu a {
-    text-decoration: none;
-    color: #f0f8ff;
-    transition: opacity 0.3s;
-}
-
-.menu a:hover {
-    opacity: 0.7;
-}
-
-body:has(#toggle-projetos:checked) .menu {
-    display: none;
-}
-
-/* Toggle entre início e projetos */
+/* Toggle Switch Estilizado (Botão Pílula) */
 .projetos-toggle input[type="checkbox"] {
     display: none;
 }
 
-.projetos-toggle label {
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     cursor: pointer;
-    transition: opacity 0.3s;
-}
-
-.projetos-toggle label:hover {
-    opacity: 0.7;
-}
-
-.projetos-toggle h2 {
-    margin: 0;
-    color: #f0f8ff;
-    font-size: 1.3em;
+    background: var(--bg-body);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
     user-select: none;
 }
 
-.label-inicio {
-    display: none;
+.toggle-label:hover {
+    background: #e2e8f0;
 }
 
-#toggle-projetos:checked ~ .toggle-label .label-projetos {
-    display: none;
+.toggle-label h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-#toggle-projetos:checked ~ .toggle-label .label-inicio {
-    display: block;
+/* Ícone de troca (Opcional, feito com CSS) */
+.toggle-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    position: relative;
+    margin-right: 8px;
 }
 
-/* Container principal */
+/* Lógica de Troca de Texto */
+.label-inicio { display: none; }
+.label-projetos { display: block; }
+
+#toggle-projetos:checked ~ .toggle-label .label-projetos { display: none; }
+#toggle-projetos:checked ~ .toggle-label .label-inicio { display: block; }
+#toggle-projetos:checked ~ .toggle-label .toggle-icon { background: var(--text-main); }
+
+/* Menu de Navegação */
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: var(--primary);
+}
+
+.menu span { color: #cbd5e1; }
+
+/* Esconde menu quando em projetos */
+body:has(#toggle-projetos:checked) .menu {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* -------------------------------------------
+   LAYOUT PRINCIPAL (Container)
+------------------------------------------- */
 .container {
-    margin-top: 72px;
-    padding: 24px;
-    transition: opacity 0.5s ease, transform 0.6s ease;
+    max-width: 1024px;
+    margin: calc(var(--header-height) + 2rem) auto 0;
+    padding: 0 1.5rem 4rem;
+    
+    /* Animação de Entrada/Saída */
+    transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s;
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
 }
 
+/* Quando projetos está ativo, o container principal some */
 body:has(#toggle-projetos:checked) .container {
     opacity: 0;
-    visibility: hidden;
-    transform: rotateY(180deg);
+    transform: translateY(20px) scale(0.98);
     pointer-events: none;
-    position: absolute;
+    position: absolute; /* Tira do fluxo */
+    width: 100%;
+    filter: blur(5px);
 }
 
 section {
-    max-width: 1200px;
-    margin: 0 auto 64px;
-    padding: 32px 24px;
+    margin-bottom: 5rem;
 }
 
-/* Seção de apresentação */
+/* -------------------------------------------
+   SEÇÃO: INÍCIO (Hero)
+------------------------------------------- */
 #inicio {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding-top: 2rem;
 }
 
 #luiz {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 32px;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    border: 4px solid var(--bg-card);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+#luiz:hover {
+    transform: scale(1.05) rotate(2deg);
 }
 
 .apresentacao h1 {
-    font-size: 2.5em;
-    margin-bottom: 16px;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
 }
 
-.apresentacao p {
-    font-size: 1.1em;
-    line-height: 1.6;
+.apresentacao p strong {
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+.apresentacao > p:last-of-type {
     max-width: 600px;
-    margin: 0 auto 16px;
-    color: #555;
+    margin: 1.5rem auto;
+    color: var(--text-muted);
+    font-size: 1.1rem;
 }
 
-/* Botões de contato */
+/* Botões de Contato */
 .btn-inicio {
     display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 32px;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.email-inicio,
-.github-inicio {
+.contact-btn {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 16px 24px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.email-inicio:hover,
-.github-inicio:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.email-inicio img,
-.github-inicio img {
-    height: 24px;
-    width: 24px;
-}
-
-.email-inicio a,
-.github-inicio a {
+    gap: 0.75rem;
+    background: var(--bg-card);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
     text-decoration: none;
-    color: #333;
+    color: var(--text-main);
+    font-weight: 600;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
 }
 
-/* Títulos das seções */
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.contact-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* -------------------------------------------
+   SEÇÕES GERAIS
+------------------------------------------- */
 h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
-    font-size: 2em;
-    margin-bottom: 32px;
+    gap: 0.75rem;
+    color: var(--text-main);
 }
 
 h2 img {
-    height: 30px;
-    width: 30px;
-    margin-right: 12px;
+    width: 28px;
+    height: 28px;
+    opacity: 0.8;
 }
 
-/* Grid de habilidades */
+/* Habilidades (Tags) */
 .habilidades {
     display: flex;
-    gap: 16px;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.habilidades p {
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
-    padding: 16px 32px;
-    border-radius: 16px;
-    font-weight: bold;
-    transition: all 0.3s;
-    cursor: pointer;
-    background-color: #fff;
+.skill-tag {
+    background: var(--bg-card);
+    padding: 0.75rem 1.5rem;
+    border-radius: 99px; /* Pílula completa */
+    font-weight: 600;
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    cursor: default;
 }
 
-.habilidades p:hover {
-    background-color: #333;
-    color: #f0f8ff;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.skill-tag:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-/* Cards de experiência */
+/* Experiências (Cards) */
 .experiencias {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    display: grid;
+    gap: 1.5rem;
 }
 
-.experiencia-1,
-.experiencia-2 {
-    transition: all 0.3s;
-    padding: 16px;
+.experiencia-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.experiencia-1:hover,
-.experiencia-2:hover {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-3px);
-    cursor: pointer;
+.experiencia-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.experiencia-1 h3,
-.experiencia-2 h3 {
-    margin-bottom: 12px;
-    font-size: 1.3em;
+.experiencia-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
-.experiencia-1 p,
-.experiencia-2 p {
-    margin: 8px 0;
-    line-height: 1.6;
-    color: #555;
+.experiencia-card:hover::before {
+    opacity: 1;
 }
 
-/* Sobre mim */
-.sobre p {
-    font-size: 1.1em;
+.experiencia-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.experiencia-card .meta {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.experiencia-card p {
+    color: var(--text-muted);
+}
+
+/* Sobre Mim */
+.sobre-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     line-height: 1.8;
-    max-width: 800px;
-    color: #555;
+    color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
-/* Seção de projetos (oculta inicialmente) */
+/* -------------------------------------------
+   SEÇÃO DE PROJETOS (Overlay)
+------------------------------------------- */
 .projetos-section {
     position: fixed;
-    top: 56px;
+    top: var(--header-height);
     left: 0;
     width: 100%;
-    height: calc(100vh - 56px);
-    background-color: #d6e8f8;
-    z-index: 998;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-body);
+    z-index: 900;
+    overflow-y: auto;
+    
+    /* Estado inicial: Escondido */
     opacity: 0;
     visibility: hidden;
-    transform: rotateY(-180deg);
-    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.6s ease;
-    overflow-y: auto;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
 }
 
+/* Estado Ativo: Visível */
 body:has(#toggle-projetos:checked) .projetos-section {
     opacity: 1;
     visibility: visible;
-    transform: rotateY(0deg);
+    transform: translateY(0);
 }
 
 .projetos-content {
-    padding: 32px 24px;
-    min-height: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
     text-align: center;
 }
 
+.projetos-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-main);
+}
+
+/* Grid de Estatísticas */
 #projetos-lista {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
 }
 
-/* Cards dos projetos */
-.projeto {
-    background-color: #fff;
-    padding: 32px;
-    border-radius: 10px;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-    max-width: 300px;
-}
-
-.projeto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.projeto h3 {
-    font-size: 1.6em;
-    margin-bottom: 16px;
-}
-
-.projeto p {
-    font-size: 1em;
-    color: #555;
-}
-
-/* Destaque e projeto em desenvolvimento */
-#destaque,
-#projetos-desenvolvimento {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
+.stats-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
-    max-width: 70%;
-    margin: 32px auto;
-    padding: 32px;
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
 }
 
-.destaque-btn a,
-#projetos-desenvolvimento a {
-    color: rgb(44, 136, 255);
-    text-decoration: none;
-    transition: all 0.3s;
-    margin-top: 16px;
+.stats-card:hover {
+    transform: scale(1.05);
 }
 
-/* Tags de linguagens */
-#linguagens {
+.stats-card h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.stats-card p {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0;
+}
+
+/* Destaques e Desenvolvimento */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .projetos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.projeto-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    text-align: left;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.projeto-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.projeto-card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.tag-list {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 16px;
 }
 
-#linguagens span {
-    border: 1px solid #333;
-    padding: 8px 16px;
-    border-radius: 16px;
-    font-size: 0.9em;
-    background-color: rgba(255, 255, 255, 0.959);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
+.tag-list span {
+    font-size: 0.8rem;
+    background: #f1f5f9;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
-#linguagens span:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-    cursor: pointer;
+.projeto-link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: auto;
 }
 
-/* Responsividade para mobile */
+.projeto-link:hover {
+    text-decoration: underline;
+}
+
+/* Card Especial de Destaque */
+.destaque-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: white;
+}
+
+.destaque-card h2, 
+.destaque-card p {
+    color: #e2e8f0;
+}
+
+.destaque-card .projeto-link {
+    color: #60a5fa;
+}
+
+/* -------------------------------------------
+   RESPONSIVIDADE
+------------------------------------------- */
 @media (max-width: 768px) {
-    header {
-        padding: 12px;
-    }
-
-    .projetos-toggle h2 {
-        font-size: 1.1em;
-    }
-
     .menu {
-        gap: 12px;
-        font-size: 0.9em;
+        display: none; /* Oculta menu em mobile por enquanto para limpar visual */
     }
-
-    .menu span {
-        display: none;
-    }
-
-    .container {
-        margin-top: 60px;
-        padding: 16px;
-    }
-
-    section {
-        padding: 24px 16px;
-        margin-bottom: 48px;
-    }
-
-    #luiz {
-        width: 150px;
-        height: 150px;
-        margin-bottom: 24px;
-    }
-
+    
     .apresentacao h1 {
-        font-size: 1.8em;
-        margin-bottom: 12px;
+        font-size: 2.2rem;
     }
-
-    .apresentacao p {
-        font-size: 1em;
-        margin-bottom: 12px;
-    }
-
+    
     .btn-inicio {
         flex-direction: column;
         width: 100%;
-        gap: 16px;
-        margin-top: 24px;
     }
-
-    .email-inicio,
-    .github-inicio {
-        width: 100%;
+    
+    .contact-btn {
         justify-content: center;
     }
-
-    h2 {
-        font-size: 1.5em;
-        margin-bottom: 24px;
+    
+    header {
+        padding: 0 1rem;
     }
-
-    h2 img {
-        height: 24px;
-        width: 24px;
-    }
-
-    .habilidades {
-        justify-content: center;
-    }
-
-    .habilidades p {
-        padding: 12px 24px;
-    }
-
-    .experiencias {
-        gap: 24px;
-    }
-
-    #destaque,
-    #projetos-desenvolvimento {
-        max-width: 90%;
-        padding: 24px;
-    }
-
-    .projeto {
-        max-width: 100%;
-        padding: 24px;
-    }
-
-    #linguagens {
-        justify-content: center;
-    }
-
-    .projetos-section {
-        top: 48px;
-        height: calc(100vh - 48px);
-    }
-
-    .projetos-content {
-        padding: 24px 16px;
-    }
-
-    #projetos-lista {
-        gap: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    header,
+    
     .container {
-        padding: 12px;
-    }
-
-    section {
-        padding: 20px 12px;
-    }
-
-    .apresentacao h1 {
-        font-size: 1.5em;
-    }
-
-    .apresentacao p {
-        font-size: 0.95em;
-    }
-
-    h2 {
-        font-size: 1.3em;
-    }
-
-    .habilidades p {
-        padding: 12px 20px;
-        font-size: 0.9em;
-    }
-
-    #linguagens span {
-        padding: 8px 12px;
-        font-size: 0.85em;
-    }
-
-    #destaque,
-    #projetos-desenvolvimento {
-        padding: 20px;
+        padding: 0 1rem 3rem;
     }
 }

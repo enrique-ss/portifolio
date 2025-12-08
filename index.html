@@ -3,84 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css">
     <title>Luiz Enrique - Portfólio</title>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
 </head>
 
 <body>
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho Fixo -->
     <header>
+        <!-- Toggle Switch (Início / Projetos) -->
         <div class="projetos-toggle">
             <input type="checkbox" id="toggle-projetos">
             <label for="toggle-projetos" class="toggle-label">
-                <h2 class="label-projetos">Projetos</h2>
-                <h2 class="label-inicio">Início</h2>
+                <div class="toggle-icon"></div>
+                <span class="label-projetos">Ver Projetos</span>
+                <span class="label-inicio">Voltar ao Início</span>
             </label>
         </div>
+
+        <!-- Navegação Desktop -->
         <nav class="menu">
             <a href="#habilidades">Habilidades</a>
-            <span>|</span>
+            <span>/</span>
             <a href="#experiencias">Experiências</a>
-            <span>|</span>
+            <span>/</span>
             <a href="#sobre">Sobre Mim</a>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <div class="container">
-        <!-- Apresentação -->
+    <!-- Conteúdo Principal (Visível por padrão) -->
+    <main class="container">
+        
+        <!-- Apresentação / Hero -->
         <section id="inicio">
             <img id="luiz" src="./Recursos/images.png" alt="Foto de Luiz Enrique">
             
             <div class="apresentacao">
                 <h1>Luiz Enrique</h1>
                 <p><strong>Desenvolvedor Web</strong></p>
-                <p>Olá! Sou um desenvolvedor apaixonado por tecnologia e criação de websites.<br>Tenho experiência em React, TypeScript e outras tecnologias modernas.</p>
+                <p>Olá! Sou um desenvolvedor apaixonado por tecnologia. Transformo ideias em experiências digitais modernas usando as melhores práticas do mercado.</p>
             </div>
 
             <div class="btn-inicio">
-                <div class="email-inicio">
-                    <img src="./Recursos/o-email.png" alt="Ícone email">
-                    <a href="mailto:enriqueabyss@gmail.com">enriqueabyss@gmail.com</a>
-                </div>
-                <div class="github-inicio">
-                    <img src="./Recursos/github.png" alt="Ícone GitHub">
-                    <a href="https://github.com/enrique-ss">enrique-ss</a>
-                </div>
+                <a href="mailto:enriqueabyss@gmail.com" class="contact-btn email-inicio">
+                    <img src="./Recursos/o-email.png" alt="Email">
+                    enriqueabyss@gmail.com
+                </a>
+                <a href="https://github.com/enrique-ss" target="_blank" class="contact-btn github-inicio">
+                    <img src="./Recursos/github.png" alt="GitHub">
+                    enrique-ss
+                </a>
             </div>
         </section>
 
         <!-- Habilidades -->
         <section id="habilidades">
             <h2>
-                <img src="./Recursos/distintivo.png" alt="Ícone habilidades">
-                Habilidades
+                <img src="./Recursos/distintivo.png" alt="Ícone">
+                Habilidades & Tech Stack
             </h2>
             <div class="habilidades">
-                <p>HTML</p>
-                <p>CSS</p>
-                <p>JavaScript</p>
-                <p>TypeScript</p>
-                <p>React</p>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3 / SASS</span>
+                <span class="skill-tag">JavaScript ES6+</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">Git / GitHub</span>
             </div>
         </section>
 
         <!-- Experiências -->
         <section id="experiencias">
             <h2>
-                <img src="./Recursos/experiencias.png" alt="Ícone experiências">
-                Experiências
+                <img src="./Recursos/experiencias.png" alt="Ícone">
+                Jornada Profissional
             </h2>
             <div class="experiencias">
-                <article class="experiencia-1">
+                <article class="experiencia-card">
+                    <span class="meta">2023 - Atualmente | Tech Company</span>
                     <h3>Desenvolvedor Frontend</h3>
-                    <p><strong>Tech Company</strong> - 2023 até agora</p>
-                    <p>Desenvolvimento de interfaces web com React e TypeScript.</p>
+                    <p>Desenvolvimento de interfaces web escaláveis, implementação de design systems e otimização de performance usando React e TypeScript.</p>
                 </article>
-                <article class="experiencia-2">
+                <article class="experiencia-card">
+                    <span class="meta">2022 - 2023 | Startup Digital</span>
                     <h3>Frontend Developer</h3>
-                    <p><strong>Startup Digital</strong> - 2022 a 2023</p>
-                    <p>Criação de websites e manutenção de aplicações web.</p>
+                    <p>Criação de landing pages de alta conversão, manutenção de aplicações legadas e colaboração direta com times de design.</p>
                 </article>
             </div>
         </section>
@@ -88,58 +105,58 @@
         <!-- Sobre Mim -->
         <section id="sobre">
             <h2>Sobre Mim</h2>
-            <div class="sobre">
-                <p>Eu sou um desenvolvedor apaixonado por tecnologia e criação de websites. Tenho experiência em React, TypeScript e outras tecnologias modernas. Busco constantemente aprender novas tecnologias e aplicar as melhores práticas de desenvolvimento.</p>
+            <div class="sobre-card">
+                <p>Eu sou um desenvolvedor movido pela curiosidade. Além do código, gosto de entender como os produtos impactam a vida das pessoas. Tenho experiência sólida em React e TypeScript, mas estou sempre explorando novas fronteiras no desenvolvimento web. Meu objetivo é criar aplicações que sejam não apenas funcionais, mas também intuitivas e agradáveis de usar.</p>
             </div>
         </section>
-    </div>
+    </main>
 
-    <!-- Seção de Projetos -->
+    <!-- Seção de Projetos (Overlay - Visível ao ativar o toggle) -->
     <div class="projetos-section">
         <div class="projetos-content">
-            <section id="projetos-inicio">
-                <h1>Meus Projetos</h1>
-            </section>
+            <h1>Meus Projetos</h1>
 
             <!-- Estatísticas -->
-            <section id="projetos-lista">
-                <div class="projeto">
-                    <h3>Projetos</h3>
+            <div id="projetos-lista">
+                <div class="stats-card">
+                    <h3>Projetos Entregues</h3>
                     <p>12</p>
                 </div>
-                <div class="projeto">
-                    <h3>Usuários</h3>
+                <div class="stats-card">
+                    <h3>Usuários Ativos</h3>
                     <p>1.2k</p>
                 </div>
-                <div class="projeto">
-                    <h3>Stars</h3>
+                <div class="stats-card">
+                    <h3>Stars no GitHub</h3>
                     <p>342</p>
                 </div>
-            </section>
+            </div>
 
-            <!-- Destaque -->
-            <section id="destaque">
-                <div class="destaque-content">
-                    <h2>Destaque</h2>
-                    <p>Projetos em crescimento com mais de 1200 usuários ativos mensalmente.</p>
-                </div>
-                <div class="destaque-btn">
-                    <a href="https://enrique-ss.github.io/inazuma-website/" id="saiba-mais">Saiba Mais</a>
-                </div>
-            </section>
+            <!-- Grid de Projetos -->
+            <div class="projetos-grid">
+                <!-- Destaque -->
+                <article class="projeto-card destaque-card" id="destaque">
+                    <div>
+                        <h2>Impacto Open Source</h2>
+                        <p>Uma coleção de bibliotecas e ferramentas open-source que ajudam desenvolvedores ao redor do mundo. Focados em performance e usabilidade.</p>
+                    </div>
+                    <a href="https://github.com/enrique-ss" target="_blank" class="projeto-link">Acessar Repositórios &rarr;</a>
+                </article>
 
-            <!-- Projeto em Destaque -->
-            <section id="projetos-desenvolvimento">
-                <h2>Inazuma Website</h2>
-                <p>Um site para introduzir a região de Inazuma do jogo Genshin Impact.</p>
-                <div id="linguagens">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>TypeScript</span>
-                </div>
-                <a href="https://enrique-ss.github.io/inazuma-website/" id="saiba-mais">Ver Projeto</a>
-            </section>
+                <!-- Projeto Específico -->
+                <article class="projeto-card" id="projetos-desenvolvimento">
+                    <div>
+                        <h2>Inazuma Website</h2>
+                        <p>Uma experiência imersiva para introduzir a região de Inazuma (Genshin Impact). Focado em animações CSS e design responsivo.</p>
+                        <div class="tag-list">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
+                    <a href="https://enrique-ss.github.io/inazuma-website/" target="_blank" class="projeto-link">Ver Projeto &rarr;</a>
+                </article>
+            </div>
         </div>
     </div>
 </body>
