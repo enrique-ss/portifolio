@@ -1,17 +1,31 @@
 /* Importando fonte moderna 'Inter' */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Variáveis de Cores (Design System) */
+/* Variáveis de Cores (Design System - Modo Dark Ultra) */
 :root {
-    --primary: #2563eb;       /* Azul moderno */
-    --primary-dark: #1d4ed8;
-    --bg-body: #e0effd;       /* Fundo muito suave */
-    --bg-card: #ffffff;
-    --text-main: #1e293b;     /* Cinza escuro (não preto puro) */
-    --text-muted: #64748b;    /* Cinza médio */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --primary: #60a5fa;
+    --primary-dark: #3b82f6;
+    --primary-bg: rgba(96, 165, 250, 0.05);
+    --primary-hover-bg: rgba(96, 165, 250, 0.1);
+    --primary-border: rgba(96, 165, 250, 0.3);
+    
+    --bg-body: #0f0f0f;
+    --bg-card: #0f0f0f;
+    --bg-elevated: #141414;
+    --bg-hover: #1a1a1a;
+    
+    --text-main: #ffffff;
+    --text-muted: #a1a1a1;
+    
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.15);
+    
+    --header-bg: rgba(10, 10, 10, 0.7);
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.6), 0 2px 4px -2px rgb(0 0 0 / 0.6);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.7), 0 4px 6px -4px rgb(0 0 0 / 0.7);
+    
     --radius: 1rem;
     --header-height: 80px;
 }
@@ -32,7 +46,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita scroll lateral nas animações */
+    overflow-x: hidden;
 }
 
 /* -------------------------------------------
@@ -44,10 +58,10 @@ header {
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: rgba(255, 255, 255, 0.85); /* Vidro */
+    background: var(--header-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid var(--border);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -66,16 +80,17 @@ header {
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    background: var(--bg-body);
+    background: var(--bg-elevated);
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
     transition: all 0.2s ease;
     user-select: none;
 }
 
 .toggle-label:hover {
-    background: #e2e8f0;
+    background: var(--bg-hover);
+    border-color: var(--border-hover);
 }
 
 .toggle-label h2 {
@@ -123,7 +138,9 @@ header {
     color: var(--primary);
 }
 
-.menu span { color: #cbd5e1; }
+.menu span { 
+    color: var(--text-muted); 
+}
 
 /* Esconde menu quando em projetos */
 body:has(#toggle-projetos:checked) .menu {
@@ -151,7 +168,7 @@ body:has(#toggle-projetos:checked) .container {
     opacity: 0;
     transform: translateY(20px) scale(0.98);
     pointer-events: none;
-    position: absolute; /* Tira do fluxo */
+    position: absolute;
     width: 100%;
     filter: blur(5px);
 }
@@ -217,13 +234,13 @@ section {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: var(--bg-card);
+    background: var(--bg-elevated);
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius);
     text-decoration: none;
     color: var(--text-main);
     font-weight: 600;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     box-shadow: var(--shadow-sm);
     transition: all 0.2s ease;
 }
@@ -233,6 +250,7 @@ section {
     box-shadow: var(--shadow-md);
     border-color: var(--primary);
     color: var(--primary);
+    background: var(--primary-hover-bg);
 }
 
 .contact-btn img {
@@ -267,13 +285,13 @@ h2 img {
 }
 
 .skill-tag {
-    background: var(--bg-card);
+    background: var(--bg-elevated);
     padding: 0.75rem 1.5rem;
-    border-radius: 99px; /* Pílula completa */
+    border-radius: 99px;
     font-weight: 600;
     color: var(--text-main);
     box-shadow: var(--shadow-sm);
-    border: 1px solid transparent;
+    border: 1px solid var(--border);
     transition: all 0.2s ease;
     cursor: default;
 }
@@ -283,6 +301,7 @@ h2 img {
     color: var(--primary);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+    background: var(--primary-bg);
 }
 
 /* Experiências (Cards) */
@@ -292,11 +311,11 @@ h2 img {
 }
 
 .experiencia-card {
-    background: var(--bg-card);
+    background: var(--bg-elevated);
     padding: 2rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0,0,0,0.03);
+    border: 1px solid var(--border);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -317,6 +336,7 @@ h2 img {
 .experiencia-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary-border);
 }
 
 .experiencia-card:hover::before {
@@ -343,13 +363,14 @@ h2 img {
 
 /* Sobre Mim */
 .sobre-card {
-    background: var(--bg-card);
+    background: var(--bg-elevated);
     padding: 2.5rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
     line-height: 1.8;
     color: var(--text-muted);
     font-size: 1.05rem;
+    border: 1px solid var(--border);
 }
 
 /* -------------------------------------------
@@ -393,27 +414,28 @@ body:has(#toggle-projetos:checked) .projetos-section {
 }
 
 .projeto-card {
-    background: var(--bg-card);
+    background: var(--bg-elevated);
     border-radius: var(--radius);
     padding: 0;
     box-shadow: var(--shadow-md);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(0,0,0,0.03);
+    border: 1px solid var(--border);
     overflow: hidden;
 }
 
 .projeto-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary-border);
 }
 
 /* Imagem do Projeto */
 .projeto-imagem {
     width: 100%;
     height: 220px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--bg-card);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -451,11 +473,12 @@ body:has(#toggle-projetos:checked) .projetos-section {
 
 .tag-list span {
     font-size: 0.75rem;
-    background: #f1f5f9;
+    background: var(--bg-card);
     padding: 0.35rem 0.75rem;
     border-radius: 6px;
     color: var(--text-muted);
     font-weight: 600;
+    border: 1px solid var(--border);
 }
 
 .projeto-link {
@@ -465,16 +488,18 @@ body:has(#toggle-projetos:checked) .projetos-section {
     text-decoration: none;
     margin: 0 1.5rem 1.5rem;
     padding: 0.75rem 1.25rem;
-    background: rgba(37, 99, 235, 0.05);
+    background: var(--primary-bg);
     border-radius: 8px;
     text-align: center;
     transition: all 0.2s ease;
+    border: 1px solid var(--border);
 }
 
 .projeto-link:hover {
     background: var(--primary);
-    color: white;
+    color: var(--bg-body);
     transform: translateX(2px);
+    border-color: var(--primary);
 }
 
 /* -------------------------------------------
@@ -482,7 +507,7 @@ body:has(#toggle-projetos:checked) .projetos-section {
 ------------------------------------------- */
 @media (max-width: 768px) {
     .menu {
-        display: none; /* Oculta menu em mobile por enquanto para limpar visual */
+        display: none;
     }
     
     .apresentacao h1 {
