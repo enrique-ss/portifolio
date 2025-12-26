@@ -1,32 +1,25 @@
 /* Importando fonte moderna 'Inter' */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Variáveis de Cores (Design System - Modo Dark Ultra) */
+/* Variáveis de Cores (Design System - Dark com Alto Contraste) */
 :root {
     --primary: #60a5fa;
-    --primary-dark: #3b82f6;
-    --primary-bg: rgba(96, 165, 250, 0.05);
-    --primary-hover-bg: rgba(96, 165, 250, 0.1);
-    --primary-border: rgba(96, 165, 250, 0.3);
+    --primary-hover: #3b82f6;
     
-    --bg-body: #1b1b1b;
-    --bg-card: #0f0f0f;
-    --bg-elevated: #141414;
-    --bg-hover: #1a1a1a;
+    --bg-body: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --bg-hover: #252525;
     
     --text-main: #ffffff;
-    --text-muted: #a1a1a1;
+    --text-muted: #9ca3af;
     
-    --border: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(255, 255, 255, 0.15);
+    --border: rgba(255, 255, 255, 0.15);
+    --border-strong: rgba(255, 255, 255, 0.25);
     
-    --header-bg: #141414;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
     
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.6), 0 2px 4px -2px rgb(0 0 0 / 0.6);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.7), 0 4px 6px -4px rgb(0 0 0 / 0.7);
-    
-    --radius: 1rem;
+    --radius: 12px;
     --header-height: 80px;
 }
 
@@ -58,16 +51,17 @@ header {
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: var(--header-bg);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
     transition: all 0.3s ease;
+    box-shadow: var(--shadow);
 }
 
 /* Toggle Switch Estilizado (Botão Pílula) */
@@ -80,17 +74,17 @@ header {
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    background: var(--bg-elevated);
-    padding: 0.5rem 1rem;
+    background: var(--bg-body);
+    padding: 0.6rem 1.2rem;
     border-radius: 9999px;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     transition: all 0.2s ease;
     user-select: none;
 }
 
 .toggle-label:hover {
     background: var(--bg-hover);
-    border-color: var(--border-hover);
+    border-color: var(--border-strong);
 }
 
 .toggle-label h2 {
@@ -102,7 +96,7 @@ header {
     letter-spacing: 0.05em;
 }
 
-/* Ícone de troca (Opcional, feito com CSS) */
+/* Ícone de troca */
 .toggle-icon {
     width: 20px;
     height: 20px;
@@ -110,6 +104,7 @@ header {
     background: var(--primary);
     position: relative;
     margin-right: 8px;
+    border: 2px solid var(--primary);
 }
 
 /* Lógica de Troca de Texto */
@@ -118,7 +113,10 @@ header {
 
 #toggle-projetos:checked ~ .toggle-label .label-projetos { display: none; }
 #toggle-projetos:checked ~ .toggle-label .label-inicio { display: block; }
-#toggle-projetos:checked ~ .toggle-label .toggle-icon { background: var(--text-main); }
+#toggle-projetos:checked ~ .toggle-label .toggle-icon { 
+    background: var(--text-main); 
+    border-color: var(--text-main);
+}
 
 /* Menu de Navegação */
 .menu {
@@ -193,7 +191,7 @@ section {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--bg-card);
+    border: 4px solid var(--border-strong);
     box-shadow: var(--shadow-lg);
     margin-bottom: 2rem;
     transition: transform 0.3s ease;
@@ -236,28 +234,29 @@ section {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: var(--bg-elevated);
+    background: var(--bg-card);
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius);
     text-decoration: none;
     color: var(--text-main);
     font-weight: 600;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow);
     transition: all 0.2s ease;
 }
 
 .contact-btn:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     border-color: var(--primary);
     color: var(--primary);
-    background: var(--primary-hover-bg);
+    background: var(--bg-hover);
 }
 
 .contact-btn img {
     width: 20px;
     height: 20px;
+    filter: brightness(0) invert(1);
 }
 
 /* -------------------------------------------
@@ -287,13 +286,13 @@ h2 img {
 }
 
 .skill-tag {
-    background: var(--bg-elevated);
+    background: var(--bg-card);
     padding: 0.75rem 1.5rem;
     border-radius: 99px;
     font-weight: 600;
     color: var(--text-main);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border);
     transition: all 0.2s ease;
     cursor: default;
 }
@@ -302,8 +301,7 @@ h2 img {
     border-color: var(--primary);
     color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    background: var(--primary-bg);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Experiências (Cards) */
@@ -313,11 +311,11 @@ h2 img {
 }
 
 .experiencia-card {
-    background: var(--bg-elevated);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -338,7 +336,7 @@ h2 img {
 .experiencia-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--primary-border);
+    border-color: var(--border-strong);
 }
 
 .experiencia-card:hover::before {
@@ -365,14 +363,14 @@ h2 img {
 
 /* Sobre Mim */
 .sobre-card {
-    background: var(--bg-elevated);
+    background: var(--bg-card);
     padding: 2.5rem;
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow);
     line-height: 1.8;
     color: var(--text-muted);
     font-size: 1.05rem;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
 }
 
 /* -------------------------------------------
@@ -416,32 +414,33 @@ body:has(#toggle-projetos:checked) .projetos-section {
 }
 
 .projeto-card {
-    background: var(--bg-elevated);
+    background: var(--bg-card);
     border-radius: var(--radius);
     padding: 0;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     overflow: hidden;
 }
 
 .projeto-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--primary-border);
+    border-color: var(--border-strong);
 }
 
 /* Imagem do Projeto */
 .projeto-imagem {
     width: 100%;
     height: 220px;
-    background: var(--bg-card);
+    background: var(--bg-body);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border-bottom: 2px solid var(--border);
 }
 
 .projeto-imagem img {
@@ -475,7 +474,7 @@ body:has(#toggle-projetos:checked) .projetos-section {
 
 .tag-list span {
     font-size: 0.75rem;
-    background: var(--bg-card);
+    background: var(--bg-body);
     padding: 0.35rem 0.75rem;
     border-radius: 6px;
     color: var(--text-muted);
@@ -493,40 +492,45 @@ body:has(#toggle-projetos:checked) .projetos-section {
 .projeto-link {
     flex: 1;
     display: block;
-    color: var(--primary);
+    color: var(--text-main);
     font-weight: 600;
     text-decoration: none;
     padding: 0.75rem 1.25rem;
-    background: var(--primary-bg);
+    background: var(--primary);
     border-radius: 8px;
     text-align: center;
     transition: all 0.2s ease;
-    border: 1px solid var(--border);
+    border: 2px solid var(--primary);
 }
 
 .projeto-link:hover {
-    background: var(--primary);
-    color: var(--bg-body);
+    background: var(--primary-hover);
     transform: translateY(-2px);
-    border-color: var(--primary);
+    box-shadow: var(--shadow);
 }
 
 /* Estilo alternativo para o botão GitHub */
 .projeto-link.github-link {
-    background: var(--bg-card);
+    background: var(--bg-body);
     color: var(--text-main);
-    border-color: var(--border-hover);
+    border-color: var(--border-strong);
 }
 
 .projeto-link.github-link:hover {
-    background: var(--text-main);
-    color: var(--bg-body);
+    background: var(--bg-hover);
     border-color: var(--text-main);
 }
 
 /* Botão único quando não há site (apenas GitHub) */
 .projeto-link.github-only {
     flex: 1;
+    background: var(--bg-body);
+    border-color: var(--border-strong);
+}
+
+.projeto-link.github-only:hover {
+    background: var(--bg-hover);
+    border-color: var(--text-main);
 }
 
 /* -------------------------------------------
