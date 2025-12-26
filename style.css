@@ -555,12 +555,4 @@ body:has(#toggle-projetos:checked) .projetos-section {
     .container {
         padding: 0 1rem 3rem;
     }
-    
-    .projeto-buttons {
-        flex-direction: column;
-    }
-    
-    .projeto-link {
-        width: 100%;
-    }
 }
