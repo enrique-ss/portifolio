@@ -385,12 +385,18 @@ h2 img {
     background-color: var(--bg-body);
     z-index: 900;
     overflow-y: auto;
+    overflow-x: hidden;
     
     /* Estado inicial: Escondido */
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+/* Oculta a barra de rolagem quando projetos está ativo */
+body:has(#toggle-projetos:checked) {
+    overflow: hidden;
 }
 
 /* Estado Ativo: Visível */
