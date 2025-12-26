@@ -481,12 +481,19 @@ body:has(#toggle-projetos:checked) .projetos-section {
     border: 1px solid var(--border);
 }
 
+/* Container dos Botões do Projeto */
+.projeto-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin: 0 1.5rem 1.5rem;
+}
+
 .projeto-link {
+    flex: 1;
     display: block;
     color: var(--primary);
     font-weight: 600;
     text-decoration: none;
-    margin: 0 1.5rem 1.5rem;
     padding: 0.75rem 1.25rem;
     background: var(--primary-bg);
     border-radius: 8px;
@@ -498,8 +505,26 @@ body:has(#toggle-projetos:checked) .projetos-section {
 .projeto-link:hover {
     background: var(--primary);
     color: var(--bg-body);
-    transform: translateX(2px);
+    transform: translateY(-2px);
     border-color: var(--primary);
+}
+
+/* Estilo alternativo para o botão GitHub */
+.projeto-link.github-link {
+    background: var(--bg-card);
+    color: var(--text-main);
+    border-color: var(--border-hover);
+}
+
+.projeto-link.github-link:hover {
+    background: var(--text-main);
+    color: var(--bg-body);
+    border-color: var(--text-main);
+}
+
+/* Botão único quando não há site (apenas GitHub) */
+.projeto-link.github-only {
+    flex: 1;
 }
 
 /* -------------------------------------------
@@ -529,5 +554,13 @@ body:has(#toggle-projetos:checked) .projetos-section {
     
     .container {
         padding: 0 1rem 3rem;
+    }
+    
+    .projeto-buttons {
+        flex-direction: column;
+    }
+    
+    .projeto-link {
+        width: 100%;
     }
 }
