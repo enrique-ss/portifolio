@@ -228,6 +228,8 @@ section {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .contact-btn {
@@ -537,15 +539,6 @@ body:has(#toggle-projetos:checked) .projetos-section {
     
     .apresentacao h1 {
         font-size: 2.2rem;
-    }
-    
-    .btn-inicio {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .contact-btn {
-        justify-content: center;
     }
     
     header {
