@@ -1,0 +1,60 @@
+# 💼 Portfólio - Luiz Enrique Silveira
+
+Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades, experiências e projetos como desenvolvedor Full-Stack.
+
+## 🚀 Como usar
+
+Basta abrir o arquivo `index.html` no navegador ou acessar:
+**[enrique-ss.github.io/portifolio](https://enrique-ss.github.io/portifolio)**
+
+## ✨ Funcionalidades
+
+- **Seção Início:** Apresentação pessoal com links para contato (Email, GitHub, LinkedIn)
+- **Habilidades:** Tags interativas com tecnologias que domino
+- **Experiências:** Cursos e formações com descrições detalhadas
+- **Projetos:** Grid com cards de projetos, preview visual e links para demo/código
+- **Toggle Dinâmico:** Alterna entre visualização de início/projetos com animações suaves
+- **Design Responsivo:** Adaptável para desktop, tablet e mobile
+
+## 🛠️ Tech Stack
+
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização moderna (Flexbox, Grid, Animações)
+- **JavaScript** - Sem frameworks (vanilla JS)
+
+## 🎨 Destaques Técnicos
+
+- **Design System:** Variáveis CSS para cores, tamanhos e espaçamentos consistentes
+- **Dark Theme:** Interface moderna com alto contraste
+- **Animações:** Transições suaves entre seções e efeitos hover
+- **Overlay Pattern:** Projetos aparecem como overlay full-screen sem navegar
+- **Mobile-First:** Layout responsivo com media queries
+
+## 📂 Estrutura
+
+```
+portifolio/
+├── index.html          # Página principal
+├── style.css           # Estilos globais
+├── Recursos/           # Imagens e ícones
+│   ├── images.png      # Foto de perfil
+│   ├── *.png           # Previews dos projetos
+│   └── *.png           # Ícones de contato
+└── README.md           # Este arquivo
+```
+
+## 🔗 Projetos em Destaque
+
+- **[Fatui Website](https://github.com/enrique-ss/fatui-website)** - Prática de Flexbox/Grid e carrossel
+- **[SGAM](https://github.com/enrique-ss/SGAM)** - Sistema de gerenciamento com Node.js + MySQL
+- **[Biblioteca API](https://github.com/enrique-ss/banco-de-dados-base-automatizada)** - Backend TypeScript com CLI e Web
+
+## 📧 Contato
+
+- **Email:** enriqueabyss@gmail.com
+- **GitHub:** [@enrique-ss](https://github.com/enrique-ss)
+- **LinkedIn:** [luiz-enrique-ss](https://www.linkedin.com/in/luiz-enrique-ss/)
+
+---
+
+⭐ **Dica:** Use o toggle "Ver Projetos" no header para explorar o portfólio completo de projetos!
