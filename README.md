@@ -1,6 +1,6 @@
 # 💼 Portfólio - Luiz Enrique Silveira
 
-Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades, experiências e projetos como desenvolvedor Full-Stack.
+Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades, experiências e projetos como desenvolvedor Full-Stack e Professor.
 
 ## 🚀 Como usar
 
