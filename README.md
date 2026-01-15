@@ -49,12 +49,6 @@ portifolio/
 - **[SGAM](https://github.com/enrique-ss/SGAM)** - Sistema de gerenciamento com Node.js + MySQL
 - **[Biblioteca API](https://github.com/enrique-ss/banco-de-dados-base-automatizada)** - Backend TypeScript com CLI e Web
 
-## 📧 Contato
-
-- **Email:** enriqueabyss@gmail.com
-- **GitHub:** [@enrique-ss](https://github.com/enrique-ss)
-- **LinkedIn:** [luiz-enrique-ss](https://www.linkedin.com/in/luiz-enrique-ss/)
-
 ---
 
 ⭐ **Dica:** Use o toggle "Ver Projetos" no header para explorar o portfólio completo de projetos!
