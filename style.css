@@ -581,15 +581,47 @@ body:has(#toggle-projetos:checked) .projetos-section {
     }
 
     .apresentacao h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     header {
         padding: 0 var(--spacing-sm);
+        height: 65px;
+    }
+
+    :root {
+        --header-height: 65px;
     }
 
     .container {
         padding: 0 var(--spacing-sm) var(--spacing-xl);
+    }
+
+    #inicio {
+        padding-top: var(--spacing-lg);
+    }
+
+    #luiz {
+        width: 140px;
+        height: 140px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .apresentacao p {
+        font-size: 0.95rem;
+        margin: var(--spacing-md) auto;
+    }
+
+    .apresentacao p strong {
+        font-size: 1.05rem;
+    }
+
+    .btn-inicio {
+        margin-top: var(--spacing-md);
+    }
+
+    section {
+        margin-bottom: var(--spacing-3xl);
     }
 
     .footer {
