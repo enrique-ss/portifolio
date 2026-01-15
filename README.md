@@ -1,6 +1,6 @@
 # 💼 Portfólio - Luiz Enrique Silveira
 
-Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades, experiências e projetos como desenvolvedor Full-Stack.
+Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades, experiências e projetos como desenvolvedor Full-Stack e Professor.
 
 ## 🚀 Como usar
 
@@ -48,12 +48,6 @@ portifolio/
 - **[Fatui Website](https://github.com/enrique-ss/fatui-website)** - Prática de Flexbox/Grid e carrossel
 - **[SGAM](https://github.com/enrique-ss/SGAM)** - Sistema de gerenciamento com Node.js + MySQL
 - **[Biblioteca API](https://github.com/enrique-ss/banco-de-dados-base-automatizada)** - Backend TypeScript com CLI e Web
-
-## 📧 Contato
-
-- **Email:** enriqueabyss@gmail.com
-- **GitHub:** [@enrique-ss](https://github.com/enrique-ss)
-- **LinkedIn:** [luiz-enrique-ss](https://www.linkedin.com/in/luiz-enrique-ss/)
 
 ---
 
