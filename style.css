@@ -67,7 +67,8 @@ header {
     box-shadow: var(--shadow);
 }
 
-.projetos-toggle input[type="checkbox"] {
+.projetos-toggle input[type="checkbox"],
+.cadernos-toggle input[type="checkbox"] {
     display: none;
 }
 
@@ -108,6 +109,7 @@ header {
     border: 2px solid var(--primary);
 }
 
+/* CONTROLES PROJETOS */
 .label-inicio {
     display: none;
 }
@@ -129,30 +131,61 @@ header {
     border-color: var(--text-main);
 }
 
-.menu {
-    display: flex;
-    gap: var(--spacing-lg);
+/* CONTROLES CADERNOS */
+.label-inicio-cadernos {
+    display: none;
 }
 
-.menu a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s;
+.label-cadernos {
+    display: block;
 }
 
-.menu a:hover {
-    color: var(--primary);
+#toggle-cadernos:checked~.toggle-label .label-cadernos {
+    display: none;
 }
 
-.menu span {
-    color: var(--text-muted);
+#toggle-cadernos:checked~.toggle-label .label-inicio-cadernos {
+    display: block;
 }
 
-body:has(#toggle-projetos:checked) .menu {
+#toggle-cadernos:checked~.toggle-label .toggle-icon {
+    background: var(--text-main);
+    border-color: var(--text-main);
+}
+
+/* ESCONDER UM BOTÃO QUANDO O OUTRO ESTIVER ATIVO */
+body:has(#toggle-projetos:checked) .cadernos-toggle {
+    display: none;
+}
+
+body:has(#toggle-cadernos:checked) .projetos-toggle {
+    display: none;
+}
+
+/* ESCONDER CONTAINER QUANDO PROJETOS ATIVO */
+body:has(#toggle-projetos:checked) .container {
     opacity: 0;
+    transform: translateY(20px) scale(0.98);
     pointer-events: none;
+    position: absolute;
+    width: 100%;
+    filter: blur(5px);
+}
+
+/* ESCONDER CONTAINER QUANDO CADERNOS ATIVO */
+body:has(#toggle-cadernos:checked) .container {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    filter: blur(5px);
+}
+
+/* EVITAR SCROLL QUANDO ABAS ABERTAS */
+body:has(#toggle-projetos:checked),
+body:has(#toggle-cadernos:checked) {
+    overflow: hidden;
 }
 
 .container {
@@ -163,15 +196,6 @@ body:has(#toggle-projetos:checked) .menu {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
-}
-
-body:has(#toggle-projetos:checked) .container {
-    opacity: 0;
-    transform: translateY(20px) scale(0.98);
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    filter: blur(5px);
 }
 
 section {
@@ -359,17 +383,7 @@ h2 img {
     color: var(--text-muted);
 }
 
-.sobre-card {
-    background: var(--bg-card);
-    padding: 2.5rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    line-height: 1.8;
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    border: 2px solid var(--border);
-}
-
+/* SEÇÃO DE PROJETOS */
 .projetos-section {
     position: fixed;
     top: var(--header-height);
@@ -384,10 +398,8 @@ h2 img {
     visibility: hidden;
     transform: translateY(20px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-}
-
-body:has(#toggle-projetos:checked) {
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 body:has(#toggle-projetos:checked) .projetos-section {
@@ -400,6 +412,8 @@ body:has(#toggle-projetos:checked) .projetos-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: var(--spacing-xl) var(--spacing-md);
+    flex: 1;
+    width: 100%;
 }
 
 .projetos-grid {
@@ -407,32 +421,6 @@ body:has(#toggle-projetos:checked) .projetos-section {
     grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
     gap: var(--spacing-md);
     justify-content: center;
-}
-
-@media (max-width: 680px) {
-    .projetos-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
-
-@media (min-width: 681px) and (max-width: 1020px) {
-    .projetos-grid {
-        grid-template-columns: repeat(2, 300px);
-    }
-}
-
-@media (min-width: 1021px) and (max-width: 1360px) {
-    .projetos-grid {
-        grid-template-columns: repeat(3, 300px);
-    }
-}
-
-@media (min-width: 1361px) {
-    .projetos-grid {
-        grid-template-columns: repeat(4, 300px);
-    }
 }
 
 .projeto-card {
@@ -551,6 +539,134 @@ body:has(#toggle-projetos:checked) .projetos-section {
     border-color: var(--text-main);
 }
 
+/* SEÇÃO DE CADERNOS */
+.cadernos-section {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-body);
+    z-index: 900;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+body:has(#toggle-cadernos:checked) .cadernos-section {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cadernos-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+    flex: 1;
+    width: 100%;
+}
+
+.cadernos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.caderno-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 0;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid var(--border);
+    overflow: hidden;
+}
+
+.caderno-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-strong);
+}
+
+.caderno-imagem {
+    width: 100%;
+    height: 180px;
+    background: var(--bg-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 2px solid var(--border);
+    padding: 20px;
+}
+
+.caderno-imagem svg {
+    width: 120px;
+    height: 140px;
+}
+
+.caderno-card h3 {
+    font-size: 1.1rem;
+    margin: 1.2rem 1.2rem 0.8rem;
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.caderno-card p {
+    color: var(--text-muted);
+    margin: 0 1.2rem 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.caderno-buttons {
+    display: flex;
+    gap: 0.6rem;
+    margin: 0 1.2rem 1.2rem;
+}
+
+.caderno-link {
+    flex: 1;
+    display: block;
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    background: var(--primary);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 2px solid var(--primary);
+    font-size: 0.9rem;
+}
+
+.caderno-link:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.caderno-link.github-only {
+    background: var(--bg-body);
+    border-color: var(--border-strong);
+}
+
+.caderno-link.github-only:hover {
+    background: var(--bg-hover);
+    border-color: var(--text-main);
+}
+
+/* FOOTER */
 .footer {
     background: var(--bg-card);
     border-top: 2px solid var(--border);
@@ -570,16 +686,48 @@ body:has(#toggle-projetos:checked) .projetos-section {
     font-weight: 600;
 }
 
-.projetos-section .footer {
-    position: relative;
-    margin-top: var(--spacing-xl);
+.projetos-section .footer,
+.cadernos-section .footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 680px) {
+
+    .projetos-grid,
+    .cadernos-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 681px) and (max-width: 1020px) {
+
+    .projetos-grid,
+    .cadernos-grid {
+        grid-template-columns: repeat(2, 300px);
+    }
+}
+
+@media (min-width: 1021px) and (max-width: 1360px) {
+
+    .projetos-grid,
+    .cadernos-grid {
+        grid-template-columns: repeat(3, 300px);
+    }
+}
+
+@media (min-width: 1361px) {
+
+    .projetos-grid,
+    .cadernos-grid {
+        grid-template-columns: repeat(4, 300px);
+    }
 }
 
 @media (max-width: 768px) {
-    .menu {
-        display: none;
-    }
-
     .apresentacao h1 {
         font-size: 2rem;
     }
@@ -587,10 +735,25 @@ body:has(#toggle-projetos:checked) .projetos-section {
     header {
         padding: 0 var(--spacing-sm);
         height: 65px;
+        gap: 0.5rem;
     }
 
     :root {
         --header-height: 65px;
+    }
+
+    .toggle-label {
+        padding: 0.5rem 0.9rem;
+    }
+
+    .toggle-label h2 {
+        font-size: 0.75rem;
+    }
+
+    .toggle-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
     }
 
     .container {
