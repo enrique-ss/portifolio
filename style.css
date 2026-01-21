@@ -450,12 +450,54 @@ body:has(#toggle-projetos:checked) .projetos-section {
     justify-content: center;
     overflow: hidden;
     border-bottom: 2px solid var(--border);
+    position: relative;
 }
 
 .projeto-imagem img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* STATUS BADGES */
+.status-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.status-concluido {
+    background: rgba(34, 197, 94, 0.9);
+    color: #ffffff;
+    border: 2px solid rgba(34, 197, 94, 1);
+}
+
+.status-andamento {
+    background: rgba(59, 130, 246, 0.9);
+    color: #ffffff;
+    border: 2px solid rgba(59, 130, 246, 1);
+}
+
+.status-falta-moderado {
+    background: rgba(234, 179, 8, 0.9);
+    color: #000000;
+    border: 2px solid rgba(234, 179, 8, 1);
+}
+
+.status-falta-muito {
+    background: rgba(239, 68, 68, 0.9);
+    color: #ffffff;
+    border: 2px solid rgba(239, 68, 68, 1);
 }
 
 .projeto-card h3 {
@@ -793,5 +835,12 @@ body:has(#toggle-cadernos:checked) .cadernos-section {
 
     .footer p {
         font-size: 0.85rem;
+    }
+
+    .status-badge {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.6rem;
+        top: 8px;
+        right: 8px;
     }
 }
