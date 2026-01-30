@@ -1,319 +1,409 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfólio de Enrique Silveira - Desenvolvedor Full-Stack e Professor de Computação">
     <link rel="stylesheet" href="style.css">
-    <title>Luiz Enrique - Portfólio</title>
+    <title>Enrique Silveira - Portfólio</title>
 </head>
 
 <body>
-    <header>
-        <div class="projetos-toggle">
-            <input type="checkbox" id="toggle-projetos">
-            <label for="toggle-projetos" class="toggle-label">
-                <div class="toggle-icon"></div>
-                <span class="label-projetos">Ver Projetos</span>
-                <span class="label-inicio">Voltar ao Início</span>
+    <!-- HEADER: Main Navigation -->
+    <header class="main-header">
+        <div class="toggle-projects">
+            <input type="checkbox" id="toggleProjects" class="toggle-projects__input">
+            <label for="toggleProjects" class="toggle-projects__label">
+                <div class="toggle-projects__icon"></div>
+                <span class="toggle-projects__text toggle-projects__text--view">Ver Projetos</span>
+                <span class="toggle-projects__text toggle-projects__text--back">Voltar ao Início</span>
             </label>
         </div>
-
-        <div class="cadernos-toggle">
-            <input type="checkbox" id="toggle-cadernos">
-            <label for="toggle-cadernos" class="toggle-label">
-                <div class="toggle-icon"></div>
-                <span class="label-cadernos">Ver Cadernos</span>
-                <span class="label-inicio-cadernos">Voltar ao Início</span>
+    
+        <div class="toggle-notebooks">
+            <input type="checkbox" id="toggleNotebooks" class="toggle-notebooks__input">
+            <label for="toggleNotebooks" class="toggle-notebooks__label">
+                <div class="toggle-notebooks__icon"></div>
+                <span class="toggle-notebooks__text toggle-notebooks__text--view">Ver Cadernos</span>
+                <span class="toggle-notebooks__text toggle-notebooks__text--back">Voltar ao Início</span>
             </label>
         </div>
     </header>
 
-    <main class="container">
-        <section id="inicio">
-            <img id="luiz" src="./Recursos/images.png" alt="Foto de Luiz Enrique">
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- SECTION: Hero / Introduction -->
+        <section class="hero" id="home">
+            <img class="hero__image" src="./Recursos/images.png" alt="Foto de perfil de Enrique Silveira">
 
-            <div class="apresentacao">
-                <h1>Enrique Silveira</h1>
-                <p><strong>(Futuro)<br>Desenvolvedor Full-Stack & Professor de Computação</strong></p>
-                <p>Olá! Sou estudante de Licenciatura em Computação no IFSul. Meu código e caderno abertos refletem
-                    minha filosofia: aprender para ensinar e ensinar para acessibilizar.</p>
+            <div class="hero__content">
+                <h1 class="hero__title">Enrique Silveira</h1>
+                <p class="hero__subtitle">
+                    <strong>(Futuro)<br>Desenvolvedor Full-Stack & Professor de Computação</strong>
+                </p>
+                <p class="hero__description">
+                    Olá! Sou estudante de Licenciatura em Computação no IFSul. Meu código e caderno abertos refletem
+                    minha filosofia: aprender para ensinar e ensinar para acessibilizar.
+                </p>
             </div>
 
-            <div class="btn-inicio">
+            <nav class="hero__social" aria-label="Links de contato e redes sociais">
                 <a href="https://mail.google.com/mail/?view=cm&to=enriqueabyss@gmail.com" target="_blank"
-                    class="contact-btn email-inicio">
-                    <img src="./Recursos/o-email.png" alt="Email">
+                    rel="noopener noreferrer" class="social-link" aria-label="Enviar email para Enrique Silveira">
+                    <img src="./Recursos/o-email.png" alt="">
                 </a>
 
-                <a href="https://github.com/enrique-ss" target="_blank" class="contact-btn github-inicio">
-                    <img src="./Recursos/github.png" alt="GitHub">
+                <a href="https://github.com/enrique-ss" target="_blank" rel="noopener noreferrer" class="social-link"
+                    aria-label="Visitar perfil do GitHub de Enrique Silveira">
+                    <img src="./Recursos/github.png" alt="">
                 </a>
 
-                <a href="https://www.linkedin.com/in/luiz-enrique-ss/" target="_blank"
-                    class="contact-btn linkedin-inicio">
-                    <img src="./Recursos/linkedin.png" alt="LinkedIn">
+                <a href="https://www.linkedin.com/in/luiz-enrique-ss/" target="_blank" rel="noopener noreferrer"
+                    class="social-link" aria-label="Visitar perfil do LinkedIn de Enrique Silveira">
+                    <img src="./Recursos/linkedin.png" alt="">
                 </a>
-            </div>
-
+            </nav>
         </section>
 
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <div class="habilidades">
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">Express</span>
-                <span class="skill-tag">JWT</span>
-                <span class="skill-tag">Git/GitHub</span>
-                <span class="skill-tag">Informática</span>
-            </div>
+        <!-- SECTION: Skills -->
+        <section class="skills" id="skills">
+            <h2 class="section-title">Habilidades</h2>
+            <ul class="skills__list">
+                <li class="skill-tag">HTML/CSS</li>
+                <li class="skill-tag">TypeScript</li>
+                <li class="skill-tag">JavaScript</li>
+                <li class="skill-tag">Node.js</li>
+                <li class="skill-tag">MySQL</li>
+                <li class="skill-tag">Express</li>
+                <li class="skill-tag">JWT</li>
+                <li class="skill-tag">Git/GitHub</li>
+                <li class="skill-tag">Informática</li>
+            </ul>
         </section>
 
-        <section id="experiencias">
-            <h2>Ensino Superior</h2>
-            <div class="experiencias">
-                <article class="experiencia-card">
-                    <span class="meta">2026 - Atualmente | IFSul </span>
-                    <h3>Licenciatura em Computação</h3>
-                    <p>Formação para atuar como professor de Computação na Educação Básica e Técnica. O curso une
+        <!-- SECTION: Education -->
+        <section class="education" id="education">
+            <h2 class="section-title">Ensino Superior</h2>
+
+            <div class="education__list">
+                <article class="education-card">
+                    <span class="education-card__meta">2026 - Atualmente | IFSul</span>
+                    <h3 class="education-card__title">Licenciatura em Computação</h3>
+                    <p class="education-card__description">
+                        Formação para atuar como professor de Computação na Educação Básica e Técnica. O curso une
                         fundamentos técnicos (programação, banco de dados, redes, arquitetura de computadores,
                         desenvolvimento de software) com conhecimentos pedagógicos (didática, metodologias de ensino,
-                        psicologia da educação, tecnologias educacionais).</p>
+                        psicologia da educação, tecnologias educacionais).
+                    </p>
                 </article>
-                <article class="experiencia-card">
-                    <span class="meta">2022 - Em andamento | UniFacitie</span>
-                    <h3>Análise e Desenvolvimento de Sistemas</h3>
-                    <p>Criação, implementação e manutenção de sistemas computacionais, abrangendo programação, banco de
+
+                <article class="education-card">
+                    <span class="education-card__meta">2022 - Em andamento | UniFacitie</span>
+                    <h3 class="education-card__title">Análise e Desenvolvimento de Sistemas</h3>
+                    <p class="education-card__description">
+                        Criação, implementação e manutenção de sistemas computacionais, abrangendo programação, banco de
                         dados, engenharia de software, redes de computadores e segurança da informação, com foco em
                         desenvolver soluções tecnológicas para atender necessidades de empresas e usuários, desde o
                         planejamento até a entrega final, utilizando linguagens e ferramentas modernas para criar
-                        softwares, apps e sistemas web.</p>
+                        softwares, apps e sistemas web.
+                    </p>
                 </article>
-                <article class="experiencia-card">
-                    <span class="meta">2020 - Trancado | IFSul </span>
-                    <h3>Sistemas para Internet</h3>
-                    <p>Formação focada no desenvolvimento de aplicações e sistemas web, abordando fundamentos de
+
+                <article class="education-card">
+                    <span class="education-card__meta">2020 - Trancado | IFSul</span>
+                    <h3 class="education-card__title">Sistemas para Internet</h3>
+                    <p class="education-card__description">
+                        Formação focada no desenvolvimento de aplicações e sistemas web, abordando fundamentos de
                         programação, desenvolvimento front-end e back-end, bancos de dados, redes e tecnologias para a
-                        internet, com ênfase na criação de soluções web funcionais e responsivas.</p>
+                        internet, com ênfase na criação de soluções web funcionais e responsivas.
+                    </p>
                 </article>
             </div>
-            <h2>Formação Complementar</h2>
-            <div class="experiencias">
-                <article class="experiencia-card">
-                    <span class="meta">2026 - 2026 | Senac</span>
-                    <h3>Juventude Digital - Programador Web</h3>
-                    <p>Desenvolvimento de aplicações web com HTML, CSS, JavaScript e React.</p>
+
+            <h2 class="section-title">Formação Complementar</h2>
+
+            <div class="education__list">
+                <article class="education-card">
+                    <span class="education-card__meta">2026 - 2026 | Senac</span>
+                    <h3 class="education-card__title">Juventude Digital - Programador Web</h3>
+                    <p class="education-card__description">
+                        Desenvolvimento de aplicações web com HTML, CSS, JavaScript e React.
+                    </p>
                 </article>
-                <article class="experiencia-card">
-                    <span class="meta">2025 - 2025 | Senac</span>
-                    <h3>RSTI - Desenvolvimento Back End com Java</h3>
-                    <p>Desenvolvimento de aplicações com JavaScript, TypeScript, HTML, CSS, Node.js e MySQL. Criação de
-                        APIs e trabalhar com bancos de dados.</p>
+
+                <article class="education-card">
+                    <span class="education-card__meta">2025 - 2025 | Senac</span>
+                    <h3 class="education-card__title">RSTI - Desenvolvimento Back End com Java</h3>
+                    <p class="education-card__description">
+                        Desenvolvimento de aplicações com JavaScript, TypeScript, HTML, CSS, Node.js e MySQL. Criação de
+                        APIs e trabalhar com bancos de dados.
+                    </p>
                 </article>
-                <article class="experiencia-card">
-                    <span class="meta">2022 - 2023 | Oracle - Alura</span>
-                    <h3>Oracle Next Education</h3>
-                    <p>Formação em Lógica de Programação, Java, Data Science, Inteligência Artificial, desenvolvimento
-                        pessoal e habilidades para o mercado. Trilhas técnicas de Back-end, Front-end e soft skills.</p>
+
+                <article class="education-card">
+                    <span class="education-card__meta">2022 - 2023 | Oracle - Alura</span>
+                    <h3 class="education-card__title">Oracle Next Education</h3>
+                    <p class="education-card__description">
+                        Formação em Lógica de Programação, Java, Data Science, Inteligência Artificial, desenvolvimento
+                        pessoal e habilidades para o mercado. Trilhas técnicas de Back-end, Front-end e soft skills.
+                    </p>
                 </article>
-                <article class="experiencia-card">
-                    <span class="meta">2022 - 2022 | PROA </span>
-                    <h3>Plataforma PROA</h3>
-                    <p>Formação focada em desenvolvimento pessoal e preparação para o mercado de trabalho, com ênfase em
-                        comunicação, raciocínio lógico, projeto profissional, trabalho em equipe e empregabilidade.</p>
+
+                <article class="education-card">
+                    <span class="education-card__meta">2022 - 2022 | PROA</span>
+                    <h3 class="education-card__title">Plataforma PROA</h3>
+                    <p class="education-card__description">
+                        Formação focada em desenvolvimento pessoal e preparação para o mercado de trabalho, com ênfase
+                        em
+                        comunicação, raciocínio lógico, projeto profissional, trabalho em equipe e empregabilidade.
+                    </p>
                 </article>
-                <article class="experiencia-card">
-                    <span class="meta">2022 - 2022 | Prefeitura de Pelotas </span>
-                    <h3>Programa Start</h3>
-                    <p>Curso de capacitação profissional e desenvolvimento pessoal para jovens, com ênfase em
+
+                <article class="education-card">
+                    <span class="education-card__meta">2022 - 2022 | Prefeitura de Pelotas</span>
+                    <h3 class="education-card__title">Programa Start</h3>
+                    <p class="education-card__description">
+                        Curso de capacitação profissional e desenvolvimento pessoal para jovens, com ênfase em
                         protagonismo, metodologias ativas, habilidades comportamentais e inserção no mercado de
-                        trabalho.</p>
+                        trabalho.
+                    </p>
                 </article>
             </div>
         </section>
     </main>
 
-    <!-- SEÇÃO DE PROJETOS -->
-    <div class="projetos-section">
-        <div class="projetos-content">
-            <div class="projetos-grid">
-
-                <article class="projeto-card">
-                    <div class="projeto-imagem">
-                        <img src="./Recursos/inazuma.png" alt="Preview Fatui Website">
-                        <span class="status-badge status-andamento">Fazendo</span>
+    <!-- SECTION: Projects Overlay -->
+    <section class="projects-overlay" aria-label="Seção de projetos">
+        <div class="projects-overlay__content">
+            <div class="projects-grid">
+                <!-- Project Card: Fatui Website -->
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="./Recursos/inazuma.png" alt="Preview do site Fatui Website com carrossel gótico">
+                        <span class="status-badge status-badge--progress">Fazendo</span>
                     </div>
-                    <h3>Fatui Website</h3>
-                    <p>Site interativo dedicado aos Onze Mensageiros Fatui de Genshin Impact. Carrossel gótico com
-                        vídeos dinâmicos que muda automaticamente conforme você navega pelos personagens.</p>
-                    <div class="tag-list">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="projeto-buttons">
-                        <a href="https://enrique-ss.github.io/fatui-website/" target="_blank" class="projeto-link">Ver
-                            Site &rarr;</a>
-                        <a href="https://github.com/enrique-ss/fatui-website" target="_blank"
-                            class="projeto-link github-link">GitHub &rarr;</a>
+                    <h3 class="project-card__title">Fatui Website</h3>
+                    <p class="project-card__description">
+                        Site interativo dedicado aos Onze Mensageiros Fatui de Genshin Impact. Carrossel gótico com
+                        vídeos dinâmicos que muda automaticamente conforme você navega pelos personagens.
+                    </p>
+                    <ul class="project-card__tags">
+                        <li class="tag">HTML/CSS</li>
+                        <li class="tag">JavaScript</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a href="https://enrique-ss.github.io/fatui-website/" target="_blank" rel="noopener noreferrer"
+                            class="project-link project-link--primary">
+                            Ver Site &rarr;
+                        </a>
+                        <a href="https://github.com/enrique-ss/fatui-website" target="_blank" rel="noopener noreferrer"
+                            class="project-link project-link--secondary">
+                            GitHub &rarr;
+                        </a>
                     </div>
                 </article>
 
-                <article class="projeto-card">
-                    <div class="projeto-imagem">
-                        <img src="./Recursos/2anos.png" alt="Preview Aniversário Website">
-                        <span class="status-badge status-concluido">Feito</span>
+                <!-- Project Card: Anniversary Website -->
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="./Recursos/2anos.png" alt="Preview do site de aniversário de namoro">
+                        <span class="status-badge status-badge--complete">Feito</span>
                     </div>
-                    <h3>Aniversário de Namoro Website</h3>
-                    <p>Uma experiência web para celebrar 2 anos de namoro. Coração pulsante interativo, galeria de 100
-                        fotos, playlist integrada do Spotify, diversas cartas, mensagens únicas por visita e mais.</p>
-                    <div class="tag-list">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="projeto-buttons">
+                    <h3 class="project-card__title">Aniversário de Namoro Website</h3>
+                    <p class="project-card__description">
+                        Uma experiência web para celebrar 2 anos de namoro. Coração pulsante interativo, galeria de 100
+                        fotos, playlist integrada do Spotify, diversas cartas, mensagens únicas por visita e mais.
+                    </p>
+                    <ul class="project-card__tags">
+                        <li class="tag">HTML/CSS</li>
+                        <li class="tag">JavaScript</li>
+                    </ul>
+                    <div class="project-card__links">
                         <a href="https://enrique-ss.github.io/aniversario-namoro/" target="_blank"
-                            class="projeto-link">Ver Site &rarr;</a>
+                            rel="noopener noreferrer" class="project-link project-link--primary">
+                            Ver Site &rarr;
+                        </a>
                         <a href="https://github.com/enrique-ss/aniversario-namoro" target="_blank"
-                            class="projeto-link github-link">GitHub &rarr;</a>
+                            rel="noopener noreferrer" class="project-link project-link--secondary">
+                            GitHub &rarr;
+                        </a>
                     </div>
                 </article>
 
-                <article class="projeto-card">
-                    <div class="projeto-imagem">
-                        <img src="./Recursos/fake.png" alt="Preview Wallpaper">
-                        <span class="status-badge status-andamento">Fazendo</span>
+                <!-- Project Card: Fake Wallpaper -->
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="./Recursos/fake.png" alt="Preview do aplicativo de papel de parede falso">
+                        <span class="status-badge status-badge--progress">Fazendo</span>
                     </div>
-                    <h3>Papel de Parede Falso</h3>
-                    <p>Transforme vídeos em wallpapers animados falsos para computadores que não deixam você
-                        personalizar a tela de fundo.</p>
-                    <div class="tag-list">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="projeto-buttons">
-                        <a href="https://enrique-ss.github.io/fake-wallpaper/" target="_blank" class="projeto-link">Ver
-                            Site &rarr;</a>
-                        <a href="https://github.com/enrique-ss/fake-wallpaper" target="_blank"
-                            class="projeto-link github-link">GitHub &rarr;</a>
-                    </div>
-                </article>
-
-                <article class="projeto-card">
-                    <div class="projeto-imagem">
-                        <img src="./Recursos/sgam.png" alt="Preview Website">
-                        <span class="status-badge status-falta-muito">Fiz Pouco</span>
-                    </div>
-                    <h3>SGAM</h3>
-                    <p>O SGAM é um Sistema para Gerenciar Agências de Marketing. Foi o projeto final que participei no
-                        "RSTI Backend". Desenvolvido a partir das necessidades da nossa cliente.</p>
-                    <div class="tag-list">
-                        <span>MySQL</span>
-                        <span>Express</span>
-                        <span>HTML/CSS</span>
-                        <span>Node.js</span>
-                        <span>JWT</span>
-                    </div>
-                    <div class="projeto-buttons">
-                        <a href="https://github.com/enrique-ss/SGAM" target="_blank"
-                            class="projeto-link github-only">GitHub &rarr;</a>
+                    <h3 class="project-card__title">Papel de Parede Falso</h3>
+                    <p class="project-card__description">
+                        Transforme vídeos em wallpapers animados falsos para computadores que não deixam você
+                        personalizar a tela de fundo.
+                    </p>
+                    <ul class="project-card__tags">
+                        <li class="tag">HTML/CSS</li>
+                        <li class="tag">JavaScript</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a href="https://enrique-ss.github.io/fake-wallpaper/" target="_blank" rel="noopener noreferrer"
+                            class="project-link project-link--primary">
+                            Ver Site &rarr;
+                        </a>
+                        <a href="https://github.com/enrique-ss/fake-wallpaper" target="_blank" rel="noopener noreferrer"
+                            class="project-link project-link--secondary">
+                            GitHub &rarr;
+                        </a>
                     </div>
                 </article>
 
-                <article class="projeto-card">
-                    <div class="projeto-imagem">
-                        <img src="./Recursos/bd.png" alt="Preview Website">
-                        <span class="status-badge status-andamento">Fazendo</span>
+                <!-- Project Card: SGAM -->
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="./Recursos/sgam.png" alt="Preview do sistema SGAM">
+                        <span class="status-badge status-badge--early">Fiz Pouco</span>
                     </div>
-                    <h3>Biblioteca API com CLI e Web</h3>
-                    <p>Sistema de biblioteca com backend e frontend integrados. Possui autenticação de usuários,
-                        gerenciamento de acervo, gerenciamento de usuários e interação via terminal ou website.</p>
-                    <div class="tag-list">
-                        <span>TypeScript</span>
-                        <span>MySQL</span>
-                        <span>Express</span>
-                        <span>HTML/CSS</span>
-                        <span>Node.js</span>
-                        <span>JWT</span>
+                    <h3 class="project-card__title">SGAM</h3>
+                    <p class="project-card__description">
+                        O SGAM é um Sistema para Gerenciar Agências de Marketing. Foi o projeto final que participei no
+                        "RSTI Backend". Desenvolvido a partir das necessidades da nossa cliente.
+                    </p>
+                    <ul class="project-card__tags">
+                        <li class="tag">MySQL</li>
+                        <li class="tag">Express</li>
+                        <li class="tag">HTML/CSS</li>
+                        <li class="tag">Node.js</li>
+                        <li class="tag">JWT</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a href="https://github.com/enrique-ss/SGAM" target="_blank" rel="noopener noreferrer"
+                            class="project-link project-link--github">
+                            GitHub &rarr;
+                        </a>
                     </div>
-                    <div class="projeto-buttons">
+                </article>
+
+                <!-- Project Card: Library API -->
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="./Recursos/bd.png" alt="Preview da API de biblioteca">
+                        <span class="status-badge status-badge--progress">Fazendo</span>
+                    </div>
+                    <h3 class="project-card__title">Biblioteca API com CLI e Web</h3>
+                    <p class="project-card__description">
+                        Sistema de biblioteca com backend e frontend integrados. Possui autenticação de usuários,
+                        gerenciamento de acervo, gerenciamento de usuários e interação via terminal ou website.
+                    </p>
+                    <ul class="project-card__tags">
+                        <li class="tag">TypeScript</li>
+                        <li class="tag">MySQL</li>
+                        <li class="tag">Express</li>
+                        <li class="tag">HTML/CSS</li>
+                        <li class="tag">Node.js</li>
+                        <li class="tag">JWT</li>
+                    </ul>
+                    <div class="project-card__links">
                         <a href="https://github.com/enrique-ss/banco-de-dados-base-automatizada" target="_blank"
-                            class="projeto-link github-only">GitHub &rarr;</a>
+                            rel="noopener noreferrer" class="project-link project-link--github">
+                            GitHub &rarr;
+                        </a>
                     </div>
                 </article>
 
-                <article class="projeto-card">
-                    <div class="projeto-imagem">
-                        <img src="./Recursos/pdf.png" alt="Preview Website">
-                        <span class="status-badge status-falta-moderado">Fiz Bastante</span>
+                <!-- Project Card: Academic PDFs -->
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="./Recursos/pdf.png" alt="Preview do gerador de PDFs acadêmicos">
+                        <span class="status-badge status-badge--moderate">Fiz Bastante</span>
                     </div>
-                    <h3>PDF's Acadêmicos</h3>
-                    <p>Crie artigos científicos no padrão ABNT usando HTML e CSS como se estivesse fazendo um site. O
-                        documento já sai formatado e pronto para impressão ou PDF.</p>
-                    <div class="tag-list">
-                        <span>HTML/CSS</span>
-                    </div>
-                    <div class="projeto-buttons">
-                        <a href="https://enrique-ss.github.io/pdfs-academicos/" target="_blank" class="projeto-link">Ver
-                            Site &rarr;</a>
+                    <h3 class="project-card__title">PDF's Acadêmicos</h3>
+                    <p class="project-card__description">
+                        Crie artigos científicos no padrão ABNT usando HTML e CSS como se estivesse fazendo um site. O
+                        documento já sai formatado e pronto para impressão ou PDF.
+                    </p>
+                    <ul class="project-card__tags">
+                        <li class="tag">HTML/CSS</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a href="https://enrique-ss.github.io/pdfs-academicos/" target="_blank"
+                            rel="noopener noreferrer" class="project-link project-link--primary">
+                            Ver Site &rarr;
+                        </a>
                         <a href="https://github.com/enrique-ss/pdfs-academicos" target="_blank"
-                            class="projeto-link github-link">GitHub &rarr;</a>
+                            rel="noopener noreferrer" class="project-link project-link--secondary">
+                            GitHub &rarr;
+                        </a>
                     </div>
                 </article>
 
-                <article class="projeto-card">
-                    <div class="projeto-imagem">
-                        <img src="./Recursos/portifolio.png" alt="Preview Website">
-                        <span class="status-badge status-concluido">Feito</span>
+                <!-- Project Card: Portfolio -->
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="./Recursos/portifolio.png" alt="Preview do portfólio pessoal">
+                        <span class="status-badge status-badge--complete">Feito</span>
                     </div>
-                    <h3>Portfólio</h3>
-                    <p>Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades,
-                        experiências e projetos como desenvolvedor Full-Stack e Professor.</p>
-                    <div class="tag-list">
-                        <span>HTML/CSS</span>
-                    </div>
-                    <div class="projeto-buttons">
-                        <a href="https://github.com/enrique-ss/portifolio" target="_blank"
-                            class="projeto-link github-only">GitHub &rarr;</a>
+                    <h3 class="project-card__title">Portfólio</h3>
+                    <p class="project-card__description">
+                        Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades,
+                        experiências e projetos como desenvolvedor Full-Stack e Professor.
+                    </p>
+                    <ul class="project-card__tags">
+                        <li class="tag">HTML/CSS</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a href="https://github.com/enrique-ss/portifolio" target="_blank" rel="noopener noreferrer"
+                            class="project-link project-link--github">
+                            GitHub &rarr;
+                        </a>
                     </div>
                 </article>
 
-                <article class="projeto-card">
-                    <div class="projeto-imagem">
-                        <img src="./Recursos/outro-nivel.png" alt="Preview Website">
-                        <span class="status-badge status-falta-moderado">Fiz Bastante</span>
+                <!-- Project Card: Educational Game -->
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="./Recursos/outro-nivel.png" alt="Preview do jogo educativo Outro Nível">
+                        <span class="status-badge status-badge--moderate">Fiz Bastante</span>
                     </div>
-                    <h3>Outro Nível Educação</h3>
-                    <p>Um jogo educativo onde crianças aprendem sobre Saúde, Esportes e Educação através de lições interativas e quizzes.</p>
-                    <div class="tag-list">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="projeto-buttons">
-                        <a href="https://enrique-ss.github.io/outro-nivel-educacao/" target="_blank" class="projeto-link">Ver
-                            Site &rarr;</a>
+                    <h3 class="project-card__title">Outro Nível Educação</h3>
+                    <p class="project-card__description">
+                        Um jogo educativo onde crianças aprendem sobre Saúde, Esportes e Educação através de lições
+                        interativas e quizzes.
+                    </p>
+                    <ul class="project-card__tags">
+                        <li class="tag">HTML/CSS</li>
+                        <li class="tag">JavaScript</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a href="https://enrique-ss.github.io/outro-nivel-educacao/" target="_blank"
+                            rel="noopener noreferrer" class="project-link project-link--primary">
+                            Ver Site &rarr;
+                        </a>
                         <a href="https://github.com/enrique-ss/outro-nivel-educacao" target="_blank"
-                            class="projeto-link github-link">GitHub &rarr;</a>
+                            rel="noopener noreferrer" class="project-link project-link--secondary">
+                            GitHub &rarr;
+                        </a>
                     </div>
+                </article>
             </div>
         </div>
 
-        <footer class="footer">
-            <p>Desenvolvido por <strong>Enrique Silveira</strong> © 2026</p>
+        <footer class="site-footer">
+            <p class="site-footer__text">
+                Desenvolvido por <strong class="site-footer__author">Enrique Silveira</strong> © 2026
+            </p>
         </footer>
-    </div>
+    </section>
 
-    <!-- SEÇÃO DE CADERNOS -->
-    <div class="cadernos-section">
-        <div class="cadernos-content">
-            <div class="cadernos-grid">
-
-                <article class="caderno-card">
-                    <div class="caderno-imagem">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- SECTION: Notebooks Overlay -->
+    <section class="notebooks-overlay" aria-label="Seção de cadernos">
+        <div class="notebooks-overlay__content">
+            <div class="notebooks-grid">
+                <!-- Notebook Card: IFSul -->
+                <article class="notebook-card">
+                    <div class="notebook-card__image">
+                        <svg class="notebook-card__icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                             <rect x="40" y="20" width="120" height="160" fill="#60a5fa" rx="4" />
                             <rect x="45" y="25" width="110" height="150" fill="#1a1a1a" rx="2" />
                             <line x1="60" y1="50" x2="140" y2="50" stroke="#60a5fa" stroke-width="2" />
@@ -328,30 +418,39 @@
                             <circle cx="85" cy="55" r="2" fill="#60a5fa" />
                         </svg>
                     </div>
-                    <h3>Licenciatura em Computação - IFSul</h3>
-                    <p>Repositório com minhas anotações pessoais de aula ao longo do curso de Licenciatura em Computação
-                        no IFSul. Documentação completa do meu processo de aprendizagem e evolução acadêmica.</p>
-                    <div class="tag-list">
-                        <span>Markdown</span>
-                        <span>Anotações</span>
-                        <span>Licenciatura</span>
-                    </div>
-                    <div class="caderno-buttons">
+                    <h3 class="notebook-card__title">Licenciatura em Computação - IFSul</h3>
+                    <p class="notebook-card__description">
+                        Repositório com minhas anotações pessoais de aula ao longo do curso de Licenciatura em
+                        Computação
+                        no IFSul. Documentação completa do meu processo de aprendizagem e evolução acadêmica.
+                    </p>
+                    <ul class="notebook-card__tags">
+                        <li class="tag">Markdown</li>
+                        <li class="tag">Anotações</li>
+                        <li class="tag">Licenciatura</li>
+                    </ul>
+                    <div class="notebook-card__links">
                         <a href="https://github.com/enrique-ss/ifsul-licenciatura-computacao" target="_blank"
-                            class="caderno-link github-only">Acessar Caderno &rarr;</a>
+                            rel="noopener noreferrer" class="notebook-link">
+                            Acessar Caderno &rarr;
+                        </a>
                     </div>
                 </article>
-
             </div>
         </div>
 
-        <footer class="footer">
-            <p>Desenvolvido por <strong>Enrique Silveira</strong> © 2026</p>
+        <footer class="site-footer">
+            <p class="site-footer__text">
+                Desenvolvido por <strong class="site-footer__author">Enrique Silveira</strong> © 2026
+            </p>
         </footer>
-    </div>
+    </section>
 
-    <footer class="footer">
-        <p>Desenvolvido por <strong>Enrique Silveira</strong> © 2026</p>
+    <!-- FOOTER: Main Site -->
+    <footer class="site-footer">
+        <p class="site-footer__text">
+            Desenvolvido por <strong class="site-footer__author">Enrique Silveira</strong> © 2026
+        </p>
     </footer>
 </body>
 
