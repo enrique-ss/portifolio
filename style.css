@@ -178,6 +178,7 @@ body:has(#toggleNotebooks:checked) .main-content {
     color: var(--text-muted);
     max-width: 600px;
     margin: 1rem auto;
+    text-align: left;
 }
 
 .hero__social {
