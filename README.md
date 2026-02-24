@@ -1,54 +1,31 @@
-# 💼 Portfólio - Luiz Enrique Silveira
+# Portfólio | Luiz Enrique Silveira
 
-Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades, experiências e projetos como desenvolvedor Full-Stack e Professor.
+Portfólio pessoal em HTML e CSS puro. Apresenta habilidades, experiências e projetos como desenvolvedor Full Stack e Professor.
 
-## 🚀 Como usar
+Acesse em: [enrique-ss.github.io/portifolio](https://enrique-ss.github.io/portifolio)
 
-Basta abrir o arquivo `index.html` no navegador ou acessar:
-**[enrique-ss.github.io/portifolio](https://enrique-ss.github.io/portifolio)**
+## Como rodar
 
-## ✨ Funcionalidades
+Clone o repositório e abra o `index.html` no navegador, ou acesse o link acima.
 
-- **Seção Início:** Apresentação pessoal com links para contato (Email, GitHub, LinkedIn)
-- **Habilidades:** Tags interativas com tecnologias que domino
-- **Experiências:** Cursos e formações com descrições detalhadas
-- **Projetos:** Grid com cards de projetos, preview visual e links para demo/código
-- **Toggle Dinâmico:** Alterna entre visualização de início/projetos com animações suaves
-- **Design Responsivo:** Adaptável para desktop, tablet e mobile
+## O que tem dentro
 
-## 🛠️ Tech Stack
+**Início** — apresentação pessoal com links para Email, GitHub e LinkedIn
 
-- **HTML5** - Estrutura semântica
-- **CSS3** - Estilização moderna (Flexbox, Grid, Animações)
-- **JavaScript** - Sem frameworks (vanilla JS)
+**Habilidades** — tags interativas com as tecnologias que domino
 
-## 🎨 Destaques Técnicos
+**Experiências** — cursos e formações com descrições detalhadas
 
-- **Design System:** Variáveis CSS para cores, tamanhos e espaçamentos consistentes
-- **Dark Theme:** Interface moderna com alto contraste
-- **Animações:** Transições suaves entre seções e efeitos hover
-- **Overlay Pattern:** Projetos aparecem como overlay full-screen sem navegar
-- **Mobile-First:** Layout responsivo com media queries
+**Projetos** — grid de cards com preview visual, link para demo e código
 
-## 📂 Estrutura
+## Destaques técnicos
 
-```
-portifolio/
-├── index.html          # Página principal
-├── style.css           # Estilos globais
-├── Recursos/           # Imagens e ícones
-│   ├── images.png      # Foto de perfil
-│   ├── *.png           # Previews dos projetos
-│   └── *.png           # Ícones de contato
-└── README.md           # Este arquivo
-```
+Toggle dinâmico que alterna entre início e projetos com animações suaves. Layout responsivo para desktop, tablet e mobile. Design system com variáveis CSS para cores e espaçamentos consistentes.
 
-## 🔗 Projetos em Destaque
+## Stack
 
-- **[Fatui Website](https://github.com/enrique-ss/fatui-website)** - Prática de Flexbox/Grid e carrossel
-- **[SGAM](https://github.com/enrique-ss/SGAM)** - Sistema de gerenciamento com Node.js + MySQL
-- **[Biblioteca API](https://github.com/enrique-ss/banco-de-dados-base-automatizada)** - Backend TypeScript com CLI e Web
+HTML, CSS e JavaScript puro. Sem frameworks, sem dependências externas.
 
 ---
 
-⭐ **Dica:** Use o toggle "Ver Projetos" no header para explorar o portfólio completo de projetos!
+Desenvolvido por Luiz Enrique.
