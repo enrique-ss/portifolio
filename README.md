@@ -10,13 +10,13 @@ Clone o repositório e abra o `index.html` no navegador, ou acesse o link acima.
 
 ## O que tem dentro
 
-**Início** — apresentação pessoal com links para Email, GitHub e LinkedIn
+**Início**: apresentação pessoal com links para Email, GitHub e LinkedIn
 
-**Habilidades** — tags interativas com as tecnologias que domino
+**Habilidades**: tags interativas com as tecnologias que domino
 
-**Experiências** — cursos e formações com descrições detalhadas
+**Experiências**: cursos e formações com descrições detalhadas
 
-**Projetos** — grid de cards com preview visual, link para demo e código
+**Projetos**: grid de cards com preview visual, link para demo e código
 
 ## Destaques técnicos
 
