@@ -4,508 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfólio de Enrique Silveira - Desenvolvedor Full-Stack e Professor de Computação">
-    <link rel="stylesheet" href="style.css">
-    <title>Enrique Silveira - Portfólio</title>
+    <meta name="description" content="Portfólio de Enrique Silveira — Desenvolvedor Full-Stack e Professor de Computação.">
+    <meta name="theme-color" content="#1d1d1f">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Enrique Silveira | Portfólio</title>
 </head>
 
 <body>
-    <!-- HEADER: Main Navigation -->
-    <header class="main-header">
-        <div class="toggle-projects">
-            <input type="checkbox" id="toggleProjects" class="toggle-projects__input">
-            <label for="toggleProjects" class="toggle-projects__label">
-                <div class="toggle-projects__icon"></div>
-                <span class="toggle-projects__text toggle-projects__text--view">Ver Projetos</span>
-                <span class="toggle-projects__text toggle-projects__text--back">Voltar ao Início</span>
-            </label>
-        </div>
-    
-        <div class="toggle-notebooks">
-            <input type="checkbox" id="toggleNotebooks" class="toggle-notebooks__input">
-            <label for="toggleNotebooks" class="toggle-notebooks__label">
-                <div class="toggle-notebooks__icon"></div>
-                <span class="toggle-notebooks__text toggle-notebooks__text--view">Ver Cadernos</span>
-                <span class="toggle-notebooks__text toggle-notebooks__text--back">Voltar ao Início</span>
-            </label>
-        </div>
+
+    <!-- BACKGROUND PERSPECTIVE GRID -->
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+    <!-- ═══════════════════════════════════
+         HEADER (STICKY SHELL)
+    ════════════════════════════════════ -->
+    <header class="header" id="siteHeader">
+        <a href="#home" class="header__logo" aria-label="Voltar para Home">
+            <div class="header__logo-dot" aria-hidden="true"></div>
+            <span>Enrique Silveira</span>
+        </a>
+
+        <nav class="header__nav" aria-label="Navegação principal">
+            <a href="#projects" class="toggle-btn" data-link="projects">Projetos</a>
+            <a href="#notebooks" class="toggle-btn" data-link="notebooks">Cadernos</a>
+            <button id="themeToggle" class="theme-btn" aria-label="Ativar modo claro">
+                <svg id="iconDark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <svg id="iconLight" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+            </button>
+        </nav>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-        <!-- SECTION: Hero / Introduction -->
-        <section class="hero" id="home">
-            <img class="hero__image" src="./resources/images.png" alt="Foto de perfil de Enrique Silveira">
-
-            <div class="hero__content">
-                <h1 class="hero__title">Enrique Silveira</h1>
-                <p class="hero__subtitle">
-                    <strong>(Futuro)<br>Desenvolvedor Full-Stack & Professor de Computação</strong>
-                </p>
-                <p class="hero__description">
-                    Estudante de Licenciatura em Computação (IFSul) e Análise e Desenvolvimento de Sistemas (UniFacitie). Acredito que
-                    conhecimento só faz sentido quando compartilhado e que a tecnologia deve ser acessível a quem mais precisa. Meu
-                    propósito é estar onde meus alunos estão e criar pontes para o conhecimento.
-                </p>
-            </div>
-
-            <nav class="hero__social" aria-label="Links de contato e redes sociais">
-                <a href="https://mail.google.com/mail/?view=cm&to=enriqueabyss@gmail.com" target="_blank"
-                    rel="noopener noreferrer" class="social-link" aria-label="Enviar email para Enrique Silveira">
-                    <img src="./resources/o-email.png" alt="">
-                </a>
-
-                <a href="https://github.com/enrique-ss" target="_blank" rel="noopener noreferrer" class="social-link"
-                    aria-label="Visitar perfil do GitHub de Enrique Silveira">
-                    <img src="./resources/github.png" alt="">
-                </a>
-
-                <a href="https://www.linkedin.com/in/luiz-enrique-ss/" target="_blank" rel="noopener noreferrer"
-                    class="social-link" aria-label="Visitar perfil do LinkedIn de Enrique Silveira">
-                    <img src="./resources/linkedin.png" alt="">
-                </a>
-            </nav>
-        </section>
-
-        <!-- SECTION: Skills -->
-        <section class="skills" id="skills">
-            <h2 class="section-title">Habilidades</h2>
-            <ul class="skills__list">
-                <li class="skill-tag">HTML/CSS</li>
-                <li class="skill-tag">TypeScript</li>
-                <li class="skill-tag">JavaScript</li>
-                <li class="skill-tag">Node.js</li>
-                <li class="skill-tag">MySQL</li>
-                <li class="skill-tag">Express</li>
-                <li class="skill-tag">JWT</li>
-                <li class="skill-tag">Git/GitHub</li>
-                <li class="skill-tag">Informática</li>
-                <li class="skill-tag">Three.js</li>
-                <li class="skill-tag">GSAP</li>
-                <li class="skill-tag">Canva</li>
-            </ul>
-        </section>
-
-        <!-- SECTION: Education -->
-        <section class="education" id="education">
-            <h2 class="section-title">Ensino Superior</h2>
-
-            <div class="education__list">
-                <article class="education-card">
-                    <span class="education-card__meta">2026 - Atualmente | IFSul</span>
-                    <h3 class="education-card__title">Licenciatura em Computação</h3>
-                    <p class="education-card__description">
-                        Formação para atuar como professor de Computação na Educação Básica e Técnica. O curso une
-                        fundamentos técnicos (programação, banco de dados, redes, arquitetura de computadores,
-                        desenvolvimento de software) com conhecimentos pedagógicos (didática, metodologias de ensino,
-                        psicologia da educação, tecnologias educacionais).
-                    </p>
-                </article>
-
-                <article class="education-card">
-                    <span class="education-card__meta">2022 - Em andamento | UniFacitie</span>
-                    <h3 class="education-card__title">Análise e Desenvolvimento de Sistemas</h3>
-                    <p class="education-card__description">
-                        Criação, implementação e manutenção de sistemas computacionais, abrangendo programação, banco de
-                        dados, engenharia de software, redes de computadores e segurança da informação, com foco em
-                        desenvolver soluções tecnológicas para atender necessidades de empresas e usuários, desde o
-                        planejamento até a entrega final, utilizando linguagens e ferramentas modernas para criar
-                        softwares, apps e sistemas web.
-                    </p>
-                </article>
-
-                <article class="education-card">
-                    <span class="education-card__meta">2020 - Trancado | IFSul</span>
-                    <h3 class="education-card__title">Sistemas para Internet</h3>
-                    <p class="education-card__description">
-                        Formação focada no desenvolvimento de aplicações e sistemas web, abordando fundamentos de
-                        programação, desenvolvimento front-end e back-end, bancos de dados, redes e tecnologias para a
-                        internet, com ênfase na criação de soluções web funcionais e responsivas.
-                    </p>
-                </article>
-            </div>
-
-            <h2 class="section-title">Formação Complementar</h2>
-
-            <div class="education__list">
-                <article class="education-card">
-                    <span class="education-card__meta">2026 - 2026 | Senac</span>
-                    <h3 class="education-card__title">Juventude Digital - Programador Web</h3>
-                    <p class="education-card__description">
-                        Desenvolvimento de aplicações web com HTML, CSS, JavaScript e React.
-                    </p>
-                </article>
-
-                <article class="education-card">
-                    <span class="education-card__meta">2025 - 2025 | Senac</span>
-                    <h3 class="education-card__title">RSTI - Desenvolvimento Back End com Java</h3>
-                    <p class="education-card__description">
-                        Desenvolvimento de aplicações com JavaScript, TypeScript, HTML, CSS, Node.js e MySQL. Criação de
-                        APIs e trabalhar com bancos de dados.
-                    </p>
-                </article>
-
-                <article class="education-card">
-                    <span class="education-card__meta">2022 - 2023 | Oracle - Alura</span>
-                    <h3 class="education-card__title">Oracle Next Education</h3>
-                    <p class="education-card__description">
-                        Formação em Lógica de Programação, Java, Data Science, Inteligência Artificial, desenvolvimento
-                        pessoal e habilidades para o mercado. Trilhas técnicas de Back-end, Front-end e soft skills.
-                    </p>
-                </article>
-
-                <article class="education-card">
-                    <span class="education-card__meta">2022 - 2022 | PROA</span>
-                    <h3 class="education-card__title">Plataforma PROA</h3>
-                    <p class="education-card__description">
-                        Formação focada em desenvolvimento pessoal e preparação para o mercado de trabalho, com ênfase
-                        em
-                        comunicação, raciocínio lógico, projeto profissional, trabalho em equipe e empregabilidade.
-                    </p>
-                </article>
-
-                <article class="education-card">
-                    <span class="education-card__meta">2022 - 2022 | Prefeitura de Pelotas</span>
-                    <h3 class="education-card__title">Programa Start</h3>
-                    <p class="education-card__description">
-                        Curso de capacitação profissional e desenvolvimento pessoal para jovens, com ênfase em
-                        protagonismo, metodologias ativas, habilidades comportamentais e inserção no mercado de
-                        trabalho.
-                    </p>
-                </article>
-            </div>
-        </section>
+    <!-- ═══════════════════════════════════
+         MAIN VIEWPORT (DYNAMIC CONTENT)
+    ════════════════════════════════════ -->
+    <main class="main" id="app">
+        <!-- O conteúdo será injetado aqui via Router -->
     </main>
 
-    <!-- SECTION: Projects Overlay -->
-    <section class="projects-overlay" aria-label="Seção de projetos">
-        <div class="projects-overlay__content">
-            <div class="projects-grid">
-                <!-- Project Card: Fatui Website -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/inazuma.png" alt="Preview do site Fatui Website com carrossel gótico">
-                        <span class="status-badge status-badge--progress">Fazendo</span>
-                    </div>
-                    <h3 class="project-card__title">Fatui Website</h3>
-                    <p class="project-card__description">
-                        Site interativo com carrossel gótico dos Fatui Harbingers de Genshin Impact. Vídeos de fundo dinâmicos que trocam
-                        automaticamente conforme você navega pelos 11 personagens.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">HTML/CSS</li>
-                        <li class="tag">JavaScript</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/fatui-website" target="_blank" rel="noopener noreferrer"
-                            class="project-link project-link--secondary">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
+    <!-- ═══════════════════════════════════
+         SCRIPTS
+    ════════════════════════════════════ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
 
-                <!-- Project Card: Site Romântico -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/2anos.png" alt="Preview do site de aniversário de namoro">
-                        <span class="status-badge status-badge--complete">Feito</span>
-                    </div>
-                    <h3 class="project-card__title">Site Romântico</h3>
-                    <p class="project-card__description">
-                        Site romântico personalizável para presentear sua parceira. Fotos, cartas, músicas e lugares especiais num só link.                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">HTML/CSS</li>
-                        <li class="tag">JavaScript</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/aniversario-namoro" target="_blank"
-                            rel="noopener noreferrer" class="project-link project-link--secondary">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: Fake Wallpaper -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/fake.png" alt="Preview do aplicativo de papel de parede falso">
-                        <span class="status-badge status-badge--complete">Feito</span>
-                    </div>
-                    <h3 class="project-card__title">Papel de Parede Falso</h3>
-                    <p class="project-card__description">
-                        Abre vídeos em tela cheia no navegador para simular wallpapers animados em computadores que não permitem personalização.
-                        17 vídeos incluídos, suporte a WebM e MP4 e miniaturas geradas automaticamente.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">HTML/CSS</li>
-                        <li class="tag">JavaScript</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/fake-wallpaper" target="_blank" rel="noopener noreferrer"
-                            class="project-link project-link--secondary">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: SGAM -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/sgam.png" alt="Preview do sistema SGAM">
-                        <span class="status-badge status-badge--progress">Fazendo</span>
-                    </div>
-                    <h3 class="project-card__title">SGAM</h3>
-                    <p class="project-card__description">
-                        O SGAM é um Sistema para Gerenciar Agências de Marketing. Foi o projeto final que participei no
-                        "RSTI Backend". Desenvolvido a partir das necessidades da nossa cliente.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">MySQL</li>
-                        <li class="tag">Express</li>
-                        <li class="tag">HTML/CSS</li>
-                        <li class="tag">Node.js</li>
-                        <li class="tag">JWT</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/SGAM" target="_blank" rel="noopener noreferrer"
-                            class="project-link project-link--github">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: Library API -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/bd.png" alt="Preview da API de biblioteca">
-                        <span class="status-badge status-badge--complete">Feito</span>
-                    </div>
-                    <h3 class="project-card__title">Biblioteca API com CLI e Web</h3>
-                    <p class="project-card__description">
-                        Sistema de gestão de acervo e empréstimos com backend em TypeScript, autenticação JWT e duas interfaces de uso: CLI e
-                        Web. Prazos automáticos, controle de disponibilidade e dois perfis de acesso.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">TypeScript</li>
-                        <li class="tag">MySQL</li>
-                        <li class="tag">Express</li>
-                        <li class="tag">HTML/CSS</li>
-                        <li class="tag">Node.js</li>
-                        <li class="tag">JWT</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/banco-de-dados-base-automatizada" target="_blank"
-                            rel="noopener noreferrer" class="project-link project-link--github">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: Academic PDFs -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/pdf.png" alt="Preview do gerador de PDFs acadêmicos">
-                        <span class="status-badge status-badge--moderate">Fiz Bastante</span>
-                    </div>
-                    <h3 class="project-card__title">PDF's Acadêmicos</h3>
-                    <p class="project-card__description">
-                        Crie artigos científicos no padrão ABNT usando HTML e CSS como se estivesse fazendo um site. O documento já sai
-                        formatado e pronto para impressão ou PDF.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">HTML/CSS</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/pdfs-academicos" target="_blank"
-                            rel="noopener noreferrer" class="project-link project-link--secondary">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: Portfolio -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/portifolio.png" alt="Preview do portfólio pessoal">
-                        <span class="status-badge status-badge--complete">Feito</span>
-                    </div>
-                    <h3 class="project-card__title">Portfólio</h3>
-                    <p class="project-card__description">
-                        Portfólio pessoal desenvolvido com HTML e CSS puro para apresentar minhas habilidades, experiências e projetos como
-                        desenvolvedor Full-Stack e Professor.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">HTML/CSS</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/portifolio" target="_blank" rel="noopener noreferrer"
-                            class="project-link project-link--github">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: Portfolio 3D -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/portifolio-3d.png" alt="Preview do portfólio pessoal 3D">
-                        <span class="status-badge status-badge--complete">Feito</span>
-                    </div>
-                    <h3 class="project-card__title">Portfólio 3D</h3>
-                    <p class="project-card__description">
-                        Portfólio pessoal com navegação espacial 3D em Three.js. Explore planetas para acessar Formação, Experiências e
-                        Projetos, com scroll animado por campo de estrelas e card de perfil interativo.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">HTML/CSS</li>
-                        <li class="tag">JavaScript</li>
-                        <li class="tag">Three.js</li>
-                        <li class="tag">GSAP</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/portifolio3d" target="_blank" rel="noopener noreferrer"
-                            class="project-link project-link--github">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: Persona 5 Exercícios HTML CSS -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/persona-5.png" alt="Preview dos exercícios do jogo Persona 5">
-                        <span class="status-badge status-badge--complete">Feito</span>
-                    </div>
-                    <h3 class="project-card__title">Exercícios HTML e CSS Persona 5</h3>
-                    <p class="project-card__description">
-                        Exercícios de front-end com a alma do Persona 5. Menu 3D, vídeo de fundo, partículas e trilha sonora. Roube corações e
-                        aprenda HTML.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">HTML/CSS</li>
-                        <li class="tag">JavaScript</li>
-                        <li class="tag">Three.js</li>
-                        <li class="tag">GSAP</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/exercicios-html-css" target="_blank"
-                            rel="noopener noreferrer" class="project-link project-link--github">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: Templates -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/templates.png" alt="Preview dos templates para sites pessoais">
-                        <span class="status-badge status-badge--complete">Feito</span>
-                    </div>
-                    <h3 class="project-card__title">Templates</h3>
-                    <p class="project-card__description">
-                        Templates de estrutura para projetos web. Execute um arquivo no CMD e a pasta do projeto é criada automaticamente.
-                        Disponível para Backend com TypeScript e Express e para sites estáticos.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">CMD</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/templates" target="_blank" rel="noopener noreferrer"
-                            class="project-link project-link--github">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project Card: Outro Nível Educação -->
-                <article class="project-card">
-                    <div class="project-card__image">
-                        <img src="./resources/outro-nivel.png" alt="Preview do jogo educativo Outro Nível">
-                        <span class="status-badge status-badge--moderate">Fiz Bastante</span>
-                    </div>
-                    <h3 class="project-card__title">Outro Nível Educação</h3>
-                    <p class="project-card__description">
-                        Plataforma educacional gamificada para crianças de 6 a 12 anos. Aprenda Saúde, Esportes, Educação e Programação através
-                        de lições interativas, quizzes e um sistema de XP, vidas e níveis.
-                    </p>
-                    <ul class="project-card__tags">
-                        <li class="tag">HTML/CSS</li>
-                        <li class="tag">JavaScript</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a href="https://github.com/enrique-ss/outro-nivel-educacao" target="_blank"
-                            rel="noopener noreferrer" class="project-link project-link--secondary">
-                            GitHub &rarr;
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <footer class="site-footer">
-            <p class="site-footer__text">
-                Desenvolvido por <strong class="site-footer__author">Enrique Silveira</strong> © 2026
-            </p>
-        </footer>
-    </section>
-
-    <!-- SECTION: Notebooks Overlay -->
-    <section class="notebooks-overlay" aria-label="Seção de cadernos">
-        <div class="notebooks-overlay__content">
-            <div class="notebooks-grid">
-                <!-- Notebook Card: IFSul -->
-                <article class="notebook-card">
-                    <div class="notebook-card__image">
-                        <svg class="notebook-card__icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="40" y="20" width="120" height="160" fill="#60a5fa" rx="4" />
-                            <rect x="45" y="25" width="110" height="150" fill="#1a1a1a" rx="2" />
-                            <line x1="60" y1="50" x2="140" y2="50" stroke="#60a5fa" stroke-width="2" />
-                            <line x1="60" y1="70" x2="140" y2="70" stroke="#9ca3af" stroke-width="1.5" />
-                            <line x1="60" y1="85" x2="140" y2="85" stroke="#9ca3af" stroke-width="1.5" />
-                            <line x1="60" y1="100" x2="120" y2="100" stroke="#9ca3af" stroke-width="1.5" />
-                            <line x1="60" y1="120" x2="140" y2="120" stroke="#9ca3af" stroke-width="1.5" />
-                            <line x1="60" y1="135" x2="135" y2="135" stroke="#9ca3af" stroke-width="1.5" />
-                            <line x1="60" y1="150" x2="110" y2="150" stroke="#9ca3af" stroke-width="1.5" />
-                            <circle cx="65" cy="55" r="2" fill="#60a5fa" />
-                            <circle cx="75" cy="55" r="2" fill="#60a5fa" />
-                            <circle cx="85" cy="55" r="2" fill="#60a5fa" />
-                        </svg>
-                    </div>
-                    <h3 class="notebook-card__title">Licenciatura em Computação - IFSul</h3>
-                    <p class="notebook-card__description">
-                        Repositório com minhas anotações pessoais de aula ao longo do curso de Licenciatura em
-                        Computação
-                        no IFSul. Documentação completa do meu processo de aprendizagem e evolução acadêmica.
-                    </p>
-                    <ul class="notebook-card__tags">
-                        <li class="tag">Markdown</li>
-                        <li class="tag">Anotações</li>
-                        <li class="tag">Licenciatura</li>
-                    </ul>
-                    <div class="notebook-card__links">
-                        <a href="https://github.com/enrique-ss/ifsul-licenciatura-computacao" target="_blank"
-                            rel="noopener noreferrer" class="notebook-link">
-                            Acessar Caderno &rarr;
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <footer class="site-footer">
-            <p class="site-footer__text">
-                Desenvolvido por <strong class="site-footer__author">Enrique Silveira</strong> © 2026
-            </p>
-        </footer>
-    </section>
-
-    <!-- FOOTER: Main Site -->
-    <footer class="site-footer">
-        <p class="site-footer__text">
-            Desenvolvido por <strong class="site-footer__author">Enrique Silveira</strong> © 2026
-        </p>
-    </footer>
 </body>
-
 </html>

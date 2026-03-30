@@ -1,0 +1,130 @@
+/* ── APPLE MINIMALIST LAYOUT ─────────────────────────────────── */
+
+.header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    height: var(--header-h);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 clamp(2rem, 8vw, 6rem);
+    background: rgba(0, 0, 0, 0.75); /* Deep Apple Gloss */
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 1000;
+    border-bottom: 0.5px solid var(--border);
+}
+
+.header__logo {
+    display: flex; gap: 0.8rem; align-items: center;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.header__logo-dot {
+    width: 5px; height: 5px;
+    background: var(--blue);
+    border-radius: 50%;
+}
+
+.header__nav { display: flex; gap: 2rem; }
+
+/* ── Navigation Links (Minimalist) ── */
+.toggle-btn {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    transition: color 0.25s var(--ease);
+    padding: 0.25rem 0;
+    border-bottom: 1px solid transparent;
+}
+
+.toggle-btn:hover { color: var(--text); opacity: 1; }
+
+.toggle-btn.active {
+    color: var(--text);
+    border-bottom-color: var(--text);
+}
+
+/* ── App Container (#app injects views here) ── */
+#app {
+    position: relative;
+    z-index: 10;
+    max-width: var(--container);
+    margin: var(--header-h) auto 0;
+    padding: 0 2rem 0;
+    will-change: opacity, transform;
+}
+
+/* ── Home View (Compact spacing) ── */
+.view-home {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-bottom: 6rem;
+}
+
+/* ── Projects / Notebooks Views ── */
+.view-projects,
+.view-notebooks {
+    padding: 4rem 0 6rem;
+}
+
+/* ── Section Headers (Clean) ── */
+.section-header {
+    display: flex; align-items: center; gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+}
+
+.section-title__accent { color: var(--text-dim); font-weight: 400; margin-right: 0.5rem; }
+
+.section-header__line {
+    flex-grow: 1; height: 1px;
+    background: var(--border);
+}
+
+/* ── Theme Toggle Button ── */
+.theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    color: var(--text-dim);
+    transition: background 0.2s, color 0.2s;
+}
+
+.theme-btn:hover {
+    background: var(--surface);
+    color: var(--text);
+}
+
+/* ── Icon switching by theme ── */
+#iconLight { display: none; }
+[data-theme="light"] #iconDark  { display: none; }
+[data-theme="light"] #iconLight { display: block; }
+
+/* ── Global Footer ── */
+.footer {
+    padding: 6rem 2rem;
+    text-align: center;
+    border-top: 0.5px solid var(--border);
+}
+
+.footer p { font-size: 0.9rem; font-weight: 500; color: var(--text-dim); letter-spacing: 0.05em; }
+.footer strong { color: var(--text); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+    .header__logo span { display: none; }
+    .header { height: 48px; padding: 0 1.5rem; }
+    .main { margin-top: 60px; gap: 6rem; padding: 0 1.5rem 4rem; }
+    .section-title { font-size: 2rem; }
+    .section-header { margin-bottom: 3rem; }
+}

@@ -1,0 +1,11 @@
+/* ── MAIN ENTRY ──────────────────────────────────────────────
+   main.css — importa todos os módulos CSS
+─────────────────────────────────────────────────────────── */
+
+@import "tokens.css";
+@import "layout.css";
+@import "hero.css";
+@import "skills.css";
+@import "education.css";
+@import "cards.css";
+@import "effects.css";

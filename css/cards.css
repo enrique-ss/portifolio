@@ -1,0 +1,168 @@
+/* ── APPLE MINIMALIST CARDS ──────────────────────────────────── */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3.5rem;
+    padding: 3.5rem 0;
+}
+
+/* ── Professional Card ── */
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.5s var(--ease);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hi);
+    background: var(--surface-hi);
+}
+
+.project-card__thumb {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #0d0d0d;
+}
+
+.project-card__thumb img {
+    filter: saturate(0.8) contrast(1.1);
+    transition: 0.8s var(--ease);
+    opacity: 0.9;
+}
+
+.project-card:hover .project-card__thumb img {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: saturate(1) contrast(1);
+}
+
+/* ── Neutral Badges (Pills) ── */
+.status-badge {
+    position: absolute;
+    top: 1.25rem; right: 1.25rem;
+    z-index: 10;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 99px;
+    letter-spacing: 0.05em;
+    color: #fff;
+    backdrop-filter: blur(8px);
+}
+
+.status-badge--progress { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
+.status-badge--complete { background: var(--blue); }
+.status-badge--moderate { background: rgba(255,255,255,0.15); }
+
+/* ── Card Body ── */
+.project-card__body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex-grow: 1;
+}
+
+.project-card__title {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+
+.project-card__desc {
+    font-size: 1.05rem;
+    color: var(--text-sub);
+    line-height: 1.75;
+    flex-grow: 1;
+}
+
+.project-card__tags {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.5rem;
+}
+
+.tag {
+    font-family: -apple-system, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    background: rgba(255,255,255,0.05); /* DRY: neutral surface */
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* ── Card Footer ── */
+.project-card__footer {
+    padding: 0 1.75rem 1.75rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 99px; /* Rounded pill style */
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    transition: 0.3s var(--ease);
+}
+
+.btn--ghost {
+    background: var(--surface-hi);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn--ghost:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* ── Notebook Variant ── */
+.notebook-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: 0.4s var(--ease);
+    max-width: 600px; /* Leaner for single item */
+}
+
+.notebook-card:hover { border-color: var(--border-hi); }
+
+.notebook-card__title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+}
+
+.notebook-card__desc {
+    font-size: 1.05rem;
+    color: var(--text-sub);
+    line-height: 1.75;
+}
+
+.notebook-card__footer { margin-top: 0.5rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+    .cards-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .project-card__title { font-size: 1.2rem; }
+    .project-card__desc { font-size: 0.95rem; }
+}

@@ -1,0 +1,27 @@
+/* ── APPLE MINIMALIST SKILLS ──────────────────────────────────── */
+
+.skills__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.skill-chip {
+    padding: 0.7rem 1.4rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 99px; /* Rounded pill Apple-style */
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-sub);
+    transition: all 0.25s var(--ease);
+    cursor: default;
+}
+
+.skill-chip:hover {
+    background: var(--surface-hi);
+    border-color: var(--border-hi);
+    color: var(--text);
+    transform: translateY(-2px);
+}
