@@ -22,3 +22,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Efeitos de botões
     initMagneticButtons();
 });
+

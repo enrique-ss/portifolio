@@ -11,7 +11,7 @@
 }
 
 /* ── All content sits above canvas ── */
-.header, #app {
+#app {
     position: relative;
     z-index: 10;
 }

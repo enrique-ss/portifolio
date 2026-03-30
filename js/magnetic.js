@@ -6,7 +6,7 @@ export function initMagneticButtons() {
     // Ignora em touch (mobile)
     if (window.matchMedia('(pointer: coarse)').matches) return;
 
-    document.querySelectorAll('.social-btn, .btn, .toggle-btn').forEach(btn => {
+    document.querySelectorAll('.social-btn, .btn').forEach(btn => {
         btn.addEventListener('mousemove', e => {
             const { left, top, width, height } = btn.getBoundingClientRect();
             const dx = (e.clientX - (left + width / 2)) * 0.18;

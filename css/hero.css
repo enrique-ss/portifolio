@@ -6,14 +6,14 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 3.5rem;
-    min-height: calc(100vh - var(--header-h));
-    padding: 2rem 0;
+    gap: 2rem;
+    min-height: calc(90vh - var(--header-h));
+    padding: 3rem 0 2rem;
 }
 
 /* ── Minimalist Avatar (180px) ── */
 .hero__avatar {
-    width: 180px; height: 180px; 
+    width: 140px; height: 140px; 
     border-radius: var(--radius-lg); /* Soft square Apple-style */
     object-fit: cover;
     border: 1px solid var(--border);
@@ -28,18 +28,18 @@
 
 /* ── Professional Typography ── */
 .hero__name {
-    font-size: clamp(2.8rem, 7vw, 4.2rem);
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
     font-weight: 700;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     color: var(--text);
     -webkit-font-smoothing: antialiased;
 }
 
 .hero__role {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
-    color: var(--text-dim);
-    margin-bottom: 1.5rem;
+    color: var(--text-sub);
+    margin-bottom: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
@@ -52,11 +52,11 @@
 }
 
 .hero__bio {
-    color: var(--text-sub);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 720px;
-    margin: 0 auto 1rem;
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto 0.8rem;
     word-break: break-word;
 }
 

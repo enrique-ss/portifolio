@@ -3,8 +3,10 @@
 .education {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2.5rem;
 }
+
+.education .section-header { margin-bottom: 0; }
 
 .education__subtitle {
     font-size: 0.9rem;
@@ -36,7 +38,6 @@
 }
 
 .edu-card__meta {
-    font-family: -apple-system, sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-dim);

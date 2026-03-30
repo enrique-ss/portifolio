@@ -30,12 +30,15 @@ export function initBackground() {
     // ── Definição dos Blobs ──────────────────────────────────
     // Cada blob tem posição base, tamanho, velocidade de parallax e fase
     const blobs = [
-        { bx: 0.15, by: 0.25, r: 220, speed: 0.35, phase: 0    },
-        { bx: 0.80, by: 0.15, r: 180, speed: 0.55, phase: 1.4  },
-        { bx: 0.50, by: 0.60, r: 150, speed: 0.25, phase: 2.8  },
-        { bx: 0.10, by: 0.75, r: 130, speed: 0.45, phase: 0.7  },
-        { bx: 0.85, by: 0.70, r: 200, speed: 0.30, phase: 2.1  },
-        { bx: 0.40, by: 0.90, r: 160, speed: 0.60, phase: 1.8  },
+        { bx: 0.15, by: 0.25, r: 140, speed: 0.35, phase: 0    },
+        { bx: 0.80, by: 0.15, r: 120, speed: 0.55, phase: 1.4  },
+        { bx: 0.50, by: 0.60, r: 100, speed: 0.25, phase: 2.8  },
+        { bx: 0.10, by: 0.75, r: 85,  speed: 0.45, phase: 0.7  },
+        { bx: 0.85, by: 0.70, r: 130, speed: 0.30, phase: 2.1  },
+        { bx: 0.40, by: 0.90, r: 110, speed: 0.60, phase: 1.8  },
+        { bx: 0.30, by: 0.05, r: 90,  speed: 0.40, phase: 3.2  },
+        { bx: 0.70, by: 0.45, r: 75,  speed: 0.65, phase: 0.4  },
+        { bx: 0.05, by: 0.55, r: 115, speed: 0.20, phase: 4.1  },
     ];
 
     // Desenha um blob como curva bezier orgânica com n pontos

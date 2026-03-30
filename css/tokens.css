@@ -21,6 +21,7 @@
     --ease:          cubic-bezier(0.4, 0, 0.2, 1);
     --grid-color:    rgba(255, 255, 255, 0.10);
     --grid-color-h:  255, 255, 255;
+    --header-bg:     rgba(0, 0, 0, 0.75);
 }
 
 /* ── Light Mode ── */
@@ -37,6 +38,7 @@
     --border-hi:     #a1a1a6;
     --grid-color:    rgba(0, 0, 0, 0.06);
     --grid-color-h:  0, 0, 0;
+    --header-bg:     rgba(255, 255, 255, 0.85);
 }
 
 /* ── DRY Reset ── */
@@ -62,6 +64,8 @@ body {
 }
 
 h1, h2, h3, h4 { color: var(--text); font-weight: 600; letter-spacing: -0.02em; }
+.text-highlight { color: var(--blue); font-weight: 600; }
+.text-muted { color: var(--text-sub); }
 ul, ol { list-style: none; }
 a { text-decoration: none; color: inherit; transition: opacity 0.25s; }
 a:hover { opacity: 0.7; }

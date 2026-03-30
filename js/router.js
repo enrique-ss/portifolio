@@ -60,8 +60,25 @@ export function initRouter() {
 
 function updateActiveLink() {
     const hash = window.location.hash || '#home';
-    document.querySelectorAll('.toggle-btn').forEach(btn => {
+    const buttons = document.querySelectorAll('.toggle-btn');
+    const indicator = document.getElementById('navIndicator');
+
+    let activeBtn = null;
+
+    buttons.forEach(btn => {
         const linkHash = btn.getAttribute('href');
-        btn.classList.toggle('active', linkHash === hash);
+        const isActive = linkHash === hash;
+        btn.classList.toggle('active', isActive);
+        if (isActive) activeBtn = btn;
     });
+
+    if (activeBtn && indicator) {
+        gsap.to(indicator, {
+            x: activeBtn.offsetLeft,
+            width: activeBtn.offsetWidth,
+            opacity: 1,
+            duration: 0.4,
+            ease: 'power3.out'
+        });
+    }
 }

@@ -7,7 +7,7 @@ export function initScrollTriggerAnimations() {
     ScrollTrigger.getAll().forEach(t => t.kill());
 
     const items = document.querySelectorAll(
-        '.section-header, .skill-chip, .edu-card, .education__subtitle, .project-card, .notebook-card'
+        '.section-header, .skill-chip, .edu-card, .education__subtitle'
     );
 
     items.forEach((el, i) => {
@@ -16,17 +16,9 @@ export function initScrollTriggerAnimations() {
 
         ScrollTrigger.create({
             trigger: el,
-            start: 'top 92%', // Entra quando chega perto do fundo da tela
-            end:   'top 8%',  // Sai quando sobe além do topo da tela
-            // toggleActions: onEnter onLeave onEnterBack onLeaveBack
-            //   → entra descendo: aparece
-            //   → sai subindo (saiu pelo topo): some
-            //   → volta descendo: reaparece
-            //   → sai descendo (voltou pelo fundo): some de novo
-            onEnter:     () => gsap.to(el, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: (i % 5) * 0.04 }),
-            onLeave:     () => gsap.to(el, { opacity: 0, y: -18, duration: 0.4, ease: 'power2.in' }),
-            onEnterBack: () => gsap.to(el, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }),
-            onLeaveBack: () => gsap.to(el, { opacity: 0, y: 22, duration: 0.4, ease: 'power2.in' }),
+            start: 'top 75%', // Trigga mais alto para não encostar na borda ao sumir
+            onEnter:     () => gsap.to(el, { opacity: 1, y: 0,  duration: 0.5, ease: 'power2.out', delay: (i % 5) * 0.03 }),
+            onLeaveBack: () => gsap.to(el, { opacity: 0, y: 22, duration: 0.5, ease: 'power2.out' }),
         });
     });
 

@@ -6,8 +6,8 @@
     height: var(--header-h);
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 clamp(2rem, 8vw, 6rem);
-    background: rgba(0, 0, 0, 0.75); /* Deep Apple Gloss */
-    backdrop-filter: saturate(180%) blur(20px);
+    background: var(--header-bg); /* Theme-aware Gloss */
+    backdrop-filter: saturate(180%) blur(25px);
     z-index: 1000;
     border-bottom: 0.5px solid var(--border);
 }
@@ -25,24 +25,38 @@
     border-radius: 50%;
 }
 
-.header__nav { display: flex; gap: 2rem; }
+.header__nav { display: flex; gap: 2rem; position: relative; align-items: center; }
 
 /* ── Navigation Links (Minimalist) ── */
 .toggle-btn {
     font-weight: 500;
     font-size: 0.85rem;
-    color: var(--text-dim);
+    color: var(--text-sub);
     transition: color 0.25s var(--ease);
     padding: 0.25rem 0;
-    border-bottom: 1px solid transparent;
+    position: relative;
+    z-index: 1;
 }
 
 .toggle-btn:hover { color: var(--text); opacity: 1; }
 
 .toggle-btn.active {
     color: var(--text);
-    border-bottom-color: var(--text);
 }
+
+/* ── Active Border Indicator ── */
+.nav-indicator {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1.5px;
+    background: var(--text);
+    border-radius: 99px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0; /* Hidden until first calculation */
+}
+
 
 /* ── App Container (#app injects views here) ── */
 #app {
