@@ -23,7 +23,7 @@
 
 .hero__avatar:hover {
     transform: scale(1.02);
-    border-color: var(--border-hi);
+    border-color: var(--blue);
 }
 
 /* ── Professional Typography ── */
@@ -68,17 +68,25 @@
 .social-btn {
     padding: 0.8rem 1.6rem;
     background: var(--surface);
-    border-radius: 99px; /* Rounded pill style */
+    border: 1px solid var(--border);
+    border-radius: 99px;
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text);
     display: flex; align-items: center; gap: 12px;
-    transition: background 0.3s, transform 0.2s;
+    transition: background 0.3s, transform 0.2s, border-color 0.3s;
 }
 
 .social-btn:hover {
     background: var(--surface-hi);
+    border-color: var(--blue);
     transform: translateY(-2px);
+}
+
+.social-btn:active {
+    transform: scale(0.97);
+    border-color: var(--blue);
+    color: var(--blue);
 }
 
 .social-btn img {

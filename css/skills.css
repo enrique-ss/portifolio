@@ -21,7 +21,13 @@
 
 .skill-chip:hover {
     background: var(--surface-hi);
-    border-color: var(--border-hi);
+    border-color: var(--blue);
     color: var(--text);
     transform: translateY(-2px);
+}
+
+.skill-chip:active {
+    transform: translateY(0);
+    border-color: var(--blue);
+    color: var(--blue);
 }

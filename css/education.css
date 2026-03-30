@@ -16,7 +16,7 @@
     color: var(--text);
     margin-bottom: 2.5rem;
     padding-left: 1.25rem;
-    border-left: 2px solid var(--text);
+    border-left: 2px solid var(--blue);
 }
 
 .edu-list {
@@ -34,7 +34,7 @@
 }
 
 .edu-card:hover {
-    border-left-color: var(--text);
+    border-left-color: var(--blue);
 }
 
 .edu-card__meta {

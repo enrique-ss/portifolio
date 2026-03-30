@@ -23,7 +23,7 @@
 }
 
 .project-card:hover {
-    border-color: var(--border-hi);
+    border-color: var(--blue);
     background: var(--surface-hi);
 }
 
@@ -105,8 +105,9 @@
 }
 
 .btn--ghost:hover {
-    background: #fff;
-    color: #000;
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
 }
 
 /* ── Notebook Variant ── */
@@ -121,7 +122,7 @@
     transition: 0.4s var(--ease);
 }
 
-.notebook-card:hover { border-color: var(--border-hi); background: var(--surface-hi); }
+.notebook-card:hover { border-color: var(--blue); background: var(--surface-hi); }
 
 .notebook-card__body {
     display: flex;

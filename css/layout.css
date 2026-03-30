@@ -38,7 +38,8 @@
     z-index: 1;
 }
 
-.toggle-btn:hover { color: var(--text); opacity: 1; }
+.toggle-btn:hover { color: var(--blue); opacity: 1; }
+.toggle-btn:active { color: var(--blue); transform: scale(0.97); }
 
 .toggle-btn.active {
     color: var(--text);
@@ -50,7 +51,7 @@
     bottom: -1px;
     left: 0;
     height: 1.5px;
-    background: var(--text);
+    background: var(--blue);
     border-radius: 99px;
     z-index: 2;
     pointer-events: none;
@@ -96,7 +97,7 @@
     white-space: nowrap;
 }
 
-.section-title__accent { color: var(--text-dim); font-weight: 400; margin-right: 0.5rem; }
+.section-title__accent { color: var(--blue); font-weight: 400; margin-right: 0.5rem; }
 
 .section-header__line {
     flex-grow: 1; height: 1px;
@@ -111,8 +112,10 @@
     width: 34px; height: 34px;
     border-radius: 50%;
     color: var(--text-dim);
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
 }
+
+.theme-btn:active { transform: scale(0.92); color: var(--blue); }
 
 .theme-btn:hover {
     background: var(--surface);

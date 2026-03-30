@@ -4,7 +4,6 @@
 
 import { initHeroAnimations } from './hero.js';
 import { initScrollTriggerAnimations } from './reveals.js';
-import { initMagneticButtons } from './magnetic.js';
 
 const $app = document.getElementById('app');
 
@@ -34,7 +33,6 @@ export async function navigate(hash) {
         );
 
         // 5. Reinicializa Animações conforme a Seção
-        initMagneticButtons();
         initScrollTriggerAnimations();
         
         if (section === 'home') {

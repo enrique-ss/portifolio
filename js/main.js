@@ -4,7 +4,6 @@
 
 import { initRouter }          from './router.js';
 import { initBackground }       from './background.js';
-import { initMagneticButtons }  from './magnetic.js';
 import { initTheme }            from './theme.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,8 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Roteador
     initRouter();
-
-    // 3. Efeitos de botões
-    initMagneticButtons();
 });
 
