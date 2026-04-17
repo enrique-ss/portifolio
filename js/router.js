@@ -4,6 +4,7 @@
 
 import { initHeroAnimations } from './hero.js';
 import { initScrollTriggerAnimations } from './reveals.js';
+import { initTabs } from './tabs.js';
 
 const $app = document.getElementById('app');
 
@@ -37,6 +38,10 @@ export async function navigate(hash) {
         
         if (section === 'home') {
             initHeroAnimations();
+        }
+        
+        if (section === 'projects') {
+            setTimeout(() => initTabs(), 100);
         }
 
     } catch (error) {

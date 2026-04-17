@@ -5,6 +5,7 @@
 import { initRouter }          from './router.js';
 import { initBackground }       from './background.js';
 import { initTheme }            from './theme.js';
+import './tabs.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
