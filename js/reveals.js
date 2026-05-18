@@ -11,14 +11,14 @@ export function initScrollTriggerAnimations() {
     );
 
     items.forEach((el, i) => {
-        // Estado inicial: invisível e levemente abaixo
-        gsap.set(el, { opacity: 0, y: 22 });
+        // Estado inicial: invisível e levemente abaixo (15px para ser mais rápido/fluido)
+        gsap.set(el, { opacity: 0, y: 15 });
 
         ScrollTrigger.create({
             trigger: el,
-            start: 'top 75%', // Trigga mais alto para não encostar na borda ao sumir
-            onEnter:     () => gsap.to(el, { opacity: 1, y: 0,  duration: 0.5, ease: 'power2.out', delay: (i % 5) * 0.03 }),
-            onLeaveBack: () => gsap.to(el, { opacity: 0, y: 22, duration: 0.5, ease: 'power2.out' }),
+            start: 'top 90%', // Trigga muito mais cedo (10% acima da borda inferior) para ficar dinâmico
+            onEnter:     () => gsap.to(el, { opacity: 1, y: 0,  duration: 0.4, ease: 'power2.out', delay: (i % 5) * 0.02 }),
+            onLeaveBack: () => gsap.to(el, { opacity: 0, y: 15, duration: 0.4, ease: 'power2.out' }),
         });
     });
 
