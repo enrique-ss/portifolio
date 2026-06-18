@@ -2,9 +2,10 @@
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-    padding: 2rem 0;
+    padding: 2rem;
+    justify-content: center;
 }
 
 .notebooks-grid {
@@ -20,6 +21,9 @@
     display: flex;
     flex-direction: column;
     transition: all 0.5s var(--ease);
+    width: 320px;
+    height: 420px;
+    flex-shrink: 0;
 }
 
 .project-card:hover {
@@ -28,24 +32,24 @@
 }
 
 .project-card__banner {
-    height: 180px;
+    height: 130px;
     width: 100%;
     overflow: hidden;
     position: relative;
     background: linear-gradient(135deg, var(--surface-hi), var(--border));
     border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
 .project-card__image {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s var(--ease);
 }
 
-.project-card:hover .project-card__image {
-    transform: scale(1.05);
-}
 
 /* ── Status Badge (Inside Body) ── */
 .status-badge {
@@ -67,46 +71,61 @@
 
 /* ── Card Body ── */
 .project-card__body {
-    padding: 1.8rem;
+    padding: 1.2rem 1.2rem 0.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .project-card__title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--text);
     letter-spacing: -0.01em;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
 }
 
 .project-card__desc {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: var(--text-sub);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    flex-grow: 0;
 }
 
 .project-card__tags {
-    display: flex; flex-wrap: wrap; gap: 8px;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 6px;
+    margin-bottom: 0.5rem;
+    margin-top: auto;
 }
 
 .tag {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 600;
-    padding: 3px 10px;
+    padding: 2px 8px;
     background: rgba(255,255,255,0.05);
     border: 1px solid var(--border);
     color: var(--text-dim);
-    border-radius: 6px;
+    border-radius: 4px;
     text-transform: uppercase;
 }
 
 /* ── Card Footer ── */
 .project-card__footer {
-    padding: 0 1.8rem 1.8rem;
+    padding: 0 1.2rem 1.2rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-card__footer .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    flex: 1;
+    max-width: calc(50% - 0.25rem);
+    text-align: center;
+    white-space: nowrap;
 }
 
 .btn {
@@ -118,6 +137,10 @@
     transition: 0.3s var(--ease);
 }
 
+.btn:hover {
+    opacity: 1;
+}
+
 .btn--ghost {
     background: var(--surface-hi);
     border: 1px solid var(--border);
@@ -125,9 +148,17 @@
 }
 
 .btn--ghost:hover {
+    background: color-mix(in srgb, var(--surface-hi) 70%, black);
+}
+
+.btn--primary {
     background: var(--blue);
-    border-color: var(--blue);
+    border: 1px solid var(--blue);
     color: #fff;
+}
+
+.btn--primary:hover {
+    background: color-mix(in srgb, var(--blue) 70%, black);
 }
 
 /* ── Notebook Variant ── */
@@ -220,30 +251,36 @@
     display: none;
 }
 
-.tab-pane.active {
-    display: block;
+.tab-pane.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-content: center;
+    justify-items: center;
 }
 
-.empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--text-sub);
-    font-size: 1.1rem;
+.notebooks-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 /* -- RESPONSIVE -- */
 @media (max-width: 1100px) {
-    .cards-grid { gap: 2rem; }
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
 }
 
-@media (max-width: 800px) {
-    .cards-grid { grid-template-columns: 1fr; }
-    .notebooks-grid { grid-template-columns: 1fr; }
+@media (max-width: 720px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        justify-items: center;
+    }
 }
 
 @media (max-width: 600px) {
-    .project-card__title { font-size: 1.2rem; }
-    .project-card__desc { font-size: 0.95rem; }
     .tabs { gap: 0.5rem; }
     .tab-btn { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
 }
