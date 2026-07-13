@@ -161,6 +161,16 @@
     background: color-mix(in srgb, var(--blue) 70%, black);
 }
 
+.btn--scratch {
+    background: #ff9500;
+    border: 1px solid #ff9500;
+    color: #fff;
+}
+
+.btn--scratch:hover {
+    background: color-mix(in srgb, #ff9500 70%, black);
+}
+
 /* ── Notebook Variant ── */
 .notebook-card {
     background: var(--surface);
