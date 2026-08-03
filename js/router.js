@@ -43,6 +43,10 @@ export async function navigate(hash) {
         if (section === 'projects') {
             setTimeout(() => initTabs(), 100);
         }
+        
+        if (section === 'components') {
+            setTimeout(() => initTabs(), 100);
+        }
 
     } catch (error) {
         console.error(error);

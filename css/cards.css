@@ -26,6 +26,11 @@
     flex-shrink: 0;
 }
 
+/* ── Component Card (Compact) ── */
+.component-card {
+    height: 315px;
+}
+
 .project-card:hover {
     border-color: var(--blue);
     background: var(--surface-hi);
