@@ -137,11 +137,44 @@
 .footer p { font-size: var(--font-base); font-weight: 500; color: var(--text-dim); letter-spacing: 0.05em; }
 .footer strong { color: var(--text); }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 600px) {
-    .header__logo span { display: none; }
-    .header { height: 48px; padding: 0 1.5rem; }
-    .main { margin-top: 60px; gap: 6rem; padding: 0 1.5rem 4rem; }
-    .section-title { font-size: var(--font-2xl); }
-    .section-header { margin-bottom: 3rem; }
+/* ── Scroll To Top Button ── */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s var(--ease);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+}
+
+.scroll-top-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+

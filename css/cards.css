@@ -315,3 +315,52 @@
     .tabs { gap: 0.5rem; }
     .tab-btn { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
 }
+
+/* ── TAG FILTER BAR ── */
+.tag-filter-container {
+    padding: 0 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tag-filter-label {
+    font-size: var(--font-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+}
+
+.tag-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-sub);
+    padding: 0.4rem 0.8rem;
+    border-radius: 99px;
+    font-size: var(--font-xs);
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s var(--ease);
+}
+
+.tag-filter-btn:hover {
+    border-color: var(--blue);
+    color: var(--text);
+    background: var(--surface-hi);
+}
+
+.tag-filter-btn.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+}
+
