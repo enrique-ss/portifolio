@@ -9,7 +9,7 @@
 .education .section-header { margin-bottom: 0; }
 
 .education__subtitle {
-    font-size: 0.9rem;
+    font-size: var(--font-base);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -38,7 +38,7 @@
 }
 
 .edu-card__meta {
-    font-size: 0.75rem;
+    font-size: var(--font-sm);
     font-weight: 500;
     color: var(--text-dim);
     margin-bottom: 0.6rem;
@@ -47,7 +47,7 @@
 }
 
 .edu-card__title {
-    font-size: 1.35rem;
+    font-size: var(--font-xl);
     font-weight: 600;
     margin-bottom: 0.8rem;
     color: var(--text);
@@ -55,7 +55,7 @@
 }
 
 .edu-card__desc {
-    font-size: 1.05rem;
+    font-size: var(--font-md);
     color: var(--text-sub);
     line-height: 1.9;
 }
@@ -63,6 +63,6 @@
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
     .edu-card { padding-left: 1rem; }
-    .edu-card__title { font-size: 1.2rem; }
-    .edu-card__desc { font-size: 0.95rem; }
+    .edu-card__title { font-size: var(--font-lg); }
+    .edu-card__desc { font-size: var(--font-base); }
 }

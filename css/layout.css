@@ -15,7 +15,7 @@
 .header__logo {
     display: flex; gap: 0.8rem; align-items: center;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: var(--font-lg);
     color: var(--text);
 }
 
@@ -30,7 +30,7 @@
 /* ── Navigation Links (Minimalist) ── */
 .toggle-btn {
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
     color: var(--text-sub);
     transition: color 0.25s var(--ease);
     padding: 0.25rem 0;
@@ -90,7 +90,7 @@
 }
 
 .section-title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: var(--font-3xl);
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.04em;
@@ -134,7 +134,7 @@
     border-top: 0.5px solid var(--border);
 }
 
-.footer p { font-size: 0.9rem; font-weight: 500; color: var(--text-dim); letter-spacing: 0.05em; }
+.footer p { font-size: var(--font-base); font-weight: 500; color: var(--text-dim); letter-spacing: 0.05em; }
 .footer strong { color: var(--text); }
 
 /* ── RESPONSIVE ── */
@@ -142,6 +142,6 @@
     .header__logo span { display: none; }
     .header { height: 48px; padding: 0 1.5rem; }
     .main { margin-top: 60px; gap: 6rem; padding: 0 1.5rem 4rem; }
-    .section-title { font-size: 2rem; }
+    .section-title { font-size: var(--font-2xl); }
     .section-header { margin-bottom: 3rem; }
 }

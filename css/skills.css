@@ -12,7 +12,7 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 99px; /* Rounded pill Apple-style */
-    font-size: 0.95rem;
+    font-size: var(--font-base);
     font-weight: 500;
     color: var(--text-sub);
     transition: all 0.25s var(--ease);
