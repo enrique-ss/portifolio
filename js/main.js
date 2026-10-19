@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Botão Voltar ao Topo
     initScrollToTop();
+
+    // 4. Botão PDF
+    initPDFButton();
 });
 
 function initScrollToTop() {
@@ -41,6 +44,15 @@ function initScrollToTop() {
             duration: 0.8,
             ease: 'power3.inOut'
         });
+    });
+}
+
+function initPDFButton() {
+    const btn = document.getElementById('pdfBtn');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+        window.print();
     });
 }
 

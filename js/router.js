@@ -69,6 +69,7 @@ function updateActiveLink() {
     const hash = window.location.hash || '#home';
     const buttons = document.querySelectorAll('.toggle-btn');
     const indicator = document.getElementById('navIndicator');
+    const navContainer = document.querySelector('.header__nav');
 
     let activeBtn = null;
 
@@ -79,10 +80,14 @@ function updateActiveLink() {
         if (isActive) activeBtn = btn;
     });
 
-    if (activeBtn && indicator) {
+    if (activeBtn && indicator && navContainer) {
+        const navRect = navContainer.getBoundingClientRect();
+        const btnRect = activeBtn.getBoundingClientRect();
+        const relativeLeft = btnRect.left - navRect.left;
+
         gsap.to(indicator, {
-            x: activeBtn.offsetLeft,
-            width: activeBtn.offsetWidth,
+            x: relativeLeft,
+            width: btnRect.width,
             opacity: 1,
             duration: 0.4,
             ease: 'power3.out'

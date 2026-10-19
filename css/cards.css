@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-    padding: 2rem;
+    padding: 2rem clamp(1rem, 5vw, 2rem);
     justify-content: center;
 }
 
@@ -307,7 +307,31 @@
 
 @media (max-width: 400px) {
     .project-card {
-        width: 380px;
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 380px) {
+    .cards-grid {
+        gap: 1.5rem;
+        padding: 1.5rem clamp(0.8rem, 4vw, 1.5rem);
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    .component-card {
+        height: auto;
+        min-height: 280px;
+    }
+
+    .tag-filter-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: var(--font-xs);
     }
 }
 
@@ -318,25 +342,61 @@
 
 /* ── TAG FILTER BAR ── */
 .tag-filter-container {
-    padding: 0 2rem;
+    padding: 0 clamp(1rem, 5vw, 2rem);
     margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
 }
 
-.tag-filter-label {
-    font-size: var(--font-xs);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-dim);
+.tag-filter-toggle {
+    padding: 0.7rem 1.4rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    font-size: var(--font-base);
+    font-weight: 500;
+    color: var(--text-sub);
+    transition: all 0.25s var(--ease);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.tag-filter-toggle:hover {
+    background: var(--surface-hi);
+    border-color: var(--blue);
+    color: var(--text);
+    transform: translateY(-2px);
+}
+
+.tag-filter-toggle:active {
+    transform: translateY(0);
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.tag-filter-toggle__icon {
+    font-size: 0.8em;
+    transition: transform 0.3s var(--ease);
+}
+
+.tag-filter-toggle.expanded .tag-filter-toggle__icon {
+    transform: rotate(180deg);
 }
 
 .tag-filter-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+.tag-filter-bar.expanded {
+    max-height: 200px;
+    opacity: 1;
 }
 
 .tag-filter-btn {

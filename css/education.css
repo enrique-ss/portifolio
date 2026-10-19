@@ -66,3 +66,10 @@
     .edu-card__title { font-size: var(--font-lg); }
     .edu-card__desc { font-size: var(--font-base); }
 }
+
+@media (max-width: 380px) {
+    .education__subtitle { font-size: var(--font-sm); padding-left: 1rem; }
+    .edu-card { padding-left: 0.8rem; }
+    .edu-card__title { font-size: var(--font-md); }
+    .edu-card__desc { font-size: var(--font-sm); }
+}

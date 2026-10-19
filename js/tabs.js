@@ -42,10 +42,19 @@ export function initTabs() {
 
 export function initTagFilters() {
     const filterBar = document.getElementById('tagFilterBar');
+    const filterToggle = document.getElementById('tagFilterToggle');
     if (!filterBar) return;
 
     const cards = document.querySelectorAll('.project-card');
     if (cards.length === 0) return;
+
+    // Toggle expand/collapse
+    if (filterToggle) {
+        filterToggle.addEventListener('click', () => {
+            filterBar.classList.toggle('expanded');
+            filterToggle.classList.toggle('expanded');
+        });
+    }
 
     // Coleta todas as tags únicas dos cards presentes
     const tagsSet = new Set();
@@ -113,6 +122,11 @@ export function initTagFilters() {
                 const targetBtn = Array.from(filterBtns).find(b => b.getAttribute('data-tag') === tagText);
                 if (targetBtn) {
                     targetBtn.click();
+                    // Expand the filter bar if it's collapsed
+                    if (filterToggle && !filterBar.classList.contains('expanded')) {
+                        filterBar.classList.add('expanded');
+                        filterToggle.classList.add('expanded');
+                    }
                 }
             });
         });

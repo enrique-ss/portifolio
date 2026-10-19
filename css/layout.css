@@ -65,7 +65,7 @@
     z-index: 10;
     max-width: var(--container);
     margin: var(--header-h) auto 0;
-    padding: 0 2rem 0;
+    padding: 0 clamp(1rem, 5vw, 2rem) 0;
     will-change: opacity, transform;
 }
 
@@ -73,7 +73,7 @@
 .view-home {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 4rem;
     padding-bottom: 6rem;
 }
 
@@ -87,6 +87,7 @@
 .section-header {
     display: flex; align-items: center; gap: 2rem;
     margin-bottom: 2.5rem;
+    flex-wrap: wrap;
 }
 
 .section-title {
@@ -129,7 +130,7 @@
 
 /* ── Global Footer ── */
 .footer {
-    padding: 6rem 2rem;
+    padding: 6rem clamp(1rem, 5vw, 2rem);
     text-align: center;
     border-top: 0.5px solid var(--border);
 }
@@ -140,7 +141,7 @@
 /* ── Scroll To Top Button ── */
 .scroll-top-btn {
     position: fixed;
-    bottom: 2rem;
+    bottom: 6rem;
     right: 2rem;
     width: 44px;
     height: 44px;
@@ -176,5 +177,225 @@
 
 .scroll-top-btn:active {
     transform: translateY(0) scale(0.95);
+}
+
+/* ── PDF Button ── */
+.pdf-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s var(--ease);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pdf-btn:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+}
+
+.pdf-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* ── Extra Small Screens (360px and below) ── */
+@media (max-width: 380px) {
+    .section-header {
+        gap: 1rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    .tag-filter-toggle {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-sm);
+    }
+
+    .header {
+        padding: 0 clamp(1rem, 5vw, 2rem);
+    }
+
+    .header__nav {
+        gap: 1rem;
+    }
+
+    .toggle-btn {
+        font-size: var(--font-xs);
+    }
+}
+
+/* ── Print Styles (PDF) ── */
+@media print {
+    .header,
+    .scroll-top-btn,
+    .pdf-btn,
+    #bgCanvas,
+    .hero__social,
+    .section-header__line,
+    .footer {
+        display: none !important;
+    }
+
+    #app {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .view-home {
+        gap: 2rem !important;
+        padding-bottom: 0 !important;
+    }
+
+    .hero {
+        min-height: auto !important;
+        padding: 0 !important;
+        text-align: left !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+    }
+
+    .hero__avatar {
+        width: 80px !important;
+        height: 80px !important;
+        display: block !important;
+    }
+
+    .hero__text {
+        flex: 1 !important;
+    }
+
+    .hero__name {
+        font-size: 24pt !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .hero__role {
+        font-size: 12pt !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero__role-prefix {
+        display: none !important;
+    }
+
+    .hero__bio {
+        font-size: 11pt !important;
+        max-width: 100% !important;
+        line-height: 1.4 !important;
+    }
+
+    .section-header {
+        margin-bottom: 1rem !important;
+        border-bottom: 1px solid #000 !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    .section-title {
+        font-size: 16pt !important;
+        font-weight: bold !important;
+    }
+
+    .section-title__accent {
+        color: #000 !important;
+    }
+
+    .skills__grid {
+        gap: 0.3rem !important;
+        justify-content: flex-start !important;
+    }
+
+    .skill-chip {
+        padding: 0.2rem 0.5rem !important;
+        border: 1px solid #000 !important;
+        background: transparent !important;
+        color: #000 !important;
+        font-size: 10pt !important;
+        border-radius: 0 !important;
+    }
+
+    .education__subtitle,
+    .experience__subtitle {
+        font-size: 12pt !important;
+        border-left: none !important;
+        padding-left: 0 !important;
+        margin-bottom: 1rem !important;
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+
+    .edu-list,
+    .experience-list {
+        gap: 1rem !important;
+    }
+
+    .edu-card,
+    .experience-card {
+        padding-left: 0 !important;
+        border-left: none !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .edu-card__meta,
+    .experience-card__meta {
+        font-size: 10pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+
+    .edu-card__title,
+    .experience-card__title {
+        font-size: 11pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+
+    .edu-card__desc,
+    .experience-card__desc {
+        font-size: 10pt !important;
+        line-height: 1.4 !important;
+        color: #000 !important;
+    }
+
+    .text-highlight {
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+    }
+
+    a {
+        text-decoration: underline !important;
+        color: #000 !important;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")" !important;
+        font-size: 9pt !important;
+    }
 }
 

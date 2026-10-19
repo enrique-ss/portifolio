@@ -31,3 +31,10 @@
     border-color: var(--blue);
     color: var(--blue);
 }
+
+@media (max-width: 380px) {
+    .skill-chip {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-sm);
+    }
+}

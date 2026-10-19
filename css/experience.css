@@ -1,0 +1,75 @@
+/* ── APPLE MINIMALIST EXPERIENCE ──────────────────────────────── */
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.experience .section-header { margin-bottom: 0; }
+
+.experience__subtitle {
+    font-size: var(--font-base);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--blue);
+    margin-bottom: 2.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--blue);
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+/* ── DRY: Minimalist Card ── */
+.experience-card {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--border);
+    transition: 0.3s var(--ease);
+}
+
+.experience-card:hover {
+    border-left-color: var(--blue);
+}
+
+.experience-card__meta {
+    font-size: var(--font-sm);
+    font-weight: 500;
+    color: var(--text-dim);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.experience-card__title {
+    font-size: var(--font-xl);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+
+.experience-card__desc {
+    font-size: var(--font-md);
+    color: var(--text-sub);
+    line-height: 1.9;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+    .experience-card { padding-left: 1rem; }
+    .experience-card__title { font-size: var(--font-lg); }
+    .experience-card__desc { font-size: var(--font-base); }
+}
+
+@media (max-width: 380px) {
+    .experience__subtitle { font-size: var(--font-sm); padding-left: 1rem; }
+    .experience-card { padding-left: 0.8rem; }
+    .experience-card__title { font-size: var(--font-md); }
+    .experience-card__desc { font-size: var(--font-sm); }
+}

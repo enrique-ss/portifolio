@@ -112,3 +112,12 @@
     .hero__name { font-size: var(--font-2xl); padding: 0 1rem; }
     .hero__avatar { width: 150px; height: 150px; }
 }
+
+@media (max-width: 380px) {
+    .hero__avatar { width: 120px; height: 120px; }
+    .hero__name { font-size: clamp(1.5rem, 5vw, 2rem); }
+    .hero__role { font-size: var(--font-sm); }
+    .hero__bio { font-size: var(--font-sm); padding: 0 0.5rem; }
+    .social-btn { padding: 0.6rem 1.2rem; font-size: var(--font-sm); gap: 8px; }
+    .social-btn img { width: 16px; }
+}
