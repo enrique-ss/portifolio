@@ -27,6 +27,10 @@ export async function navigate(hash) {
         $app.innerHTML = html;
         window.scrollTo(0, 0);
 
+        if (section === 'home') {
+            window.dispatchEvent(new Event('portfolio:home-ready'));
+        }
+
         // 4. Inicia Entrada (Fade In)
         gsap.fromTo($app, 
             { opacity: 0, y: -10 }, 
