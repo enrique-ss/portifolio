@@ -247,7 +247,8 @@
     #bgCanvas,
     .hero__social,
     .section-header__line,
-    .footer {
+    .footer,
+    .hero__role-prefix {
         display: none !important;
     }
 
@@ -271,6 +272,10 @@
         gap: 1rem !important;
     }
 
+    .hero__avatar-wrap {
+        flex-shrink: 0 !important;
+    }
+
     .hero__avatar {
         width: 80px !important;
         height: 80px !important;
@@ -284,6 +289,7 @@
     .hero__name {
         font-size: 24pt !important;
         margin-bottom: 0.5rem !important;
+        color: #000 !important;
     }
 
     .hero__role {
@@ -291,16 +297,14 @@
         text-transform: none !important;
         letter-spacing: normal !important;
         margin-bottom: 1rem !important;
-    }
-
-    .hero__role-prefix {
-        display: none !important;
+        color: #000 !important;
     }
 
     .hero__bio {
         font-size: 11pt !important;
         max-width: 100% !important;
         line-height: 1.4 !important;
+        color: #000 !important;
     }
 
     .section-header {
@@ -312,6 +316,7 @@
     .section-title {
         font-size: 16pt !important;
         font-weight: bold !important;
+        color: #000 !important;
     }
 
     .section-title__accent {
@@ -396,6 +401,10 @@
     a[href^="http"]::after {
         content: " (" attr(href) ")" !important;
         font-size: 9pt !important;
+    }
+
+    * {
+        color: #000 !important;
     }
 }
 
