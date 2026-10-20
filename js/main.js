@@ -51,9 +51,19 @@ function initPDFButton() {
     const btn = document.getElementById('pdfBtn');
     if (!btn) return;
 
-    btn.addEventListener('click', () => {
-        window.print();
+    btn.addEventListener('click', async () => {
+        // Navigate to home if not already there
+        if (window.location.hash !== '' && window.location.hash !== '#home') {
+            window.location.hash = '#home';
+            setTimeout(() => generatePDF(), 500);
+        } else {
+            generatePDF();
+        }
     });
 }
 
+async function generatePDF() {
+    // Just open print dialog - user can save as PDF
+    window.print();
+}
 

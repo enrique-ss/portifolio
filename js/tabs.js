@@ -52,7 +52,6 @@ export function initTagFilters() {
     if (filterToggle) {
         filterToggle.addEventListener('click', () => {
             filterBar.classList.toggle('expanded');
-            filterToggle.classList.toggle('expanded');
         });
     }
 
@@ -125,7 +124,6 @@ export function initTagFilters() {
                     // Expand the filter bar if it's collapsed
                     if (filterToggle && !filterBar.classList.contains('expanded')) {
                         filterBar.classList.add('expanded');
-                        filterToggle.classList.add('expanded');
                     }
                 }
             });

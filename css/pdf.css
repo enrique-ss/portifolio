@@ -1,0 +1,103 @@
+/* ── PDF Generation Styles ── */
+.pdf-hidden {
+    display: none !important;
+}
+
+.pdf-content {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+    padding: 0.5in;
+}
+
+.pdf-hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.pdf-avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #000;
+}
+
+.pdf-name {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.pdf-role {
+    font-size: 12pt;
+    margin-bottom: 1rem;
+}
+
+.pdf-bio {
+    font-size: 11pt;
+    line-height: 1.4;
+}
+
+.pdf-section {
+    margin-bottom: 2rem;
+}
+
+.pdf-section-title {
+    font-size: 16pt;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.pdf-subtitle {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.pdf-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.pdf-skill {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #000;
+    background: transparent;
+    font-size: 10pt;
+}
+
+.pdf-card {
+    margin-bottom: 1rem;
+}
+
+.pdf-meta {
+    font-size: 10pt;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.pdf-title {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.pdf-desc {
+    font-size: 10pt;
+    line-height: 1.4;
+}
+
+.pdf-highlight {
+    font-weight: bold;
+}
+
+.pdf-link {
+    text-decoration: underline;
+}
